@@ -1,4 +1,4 @@
-# Controllerの書き方と役割
+# 2. Controllerの書き方と役割
 
 Controllerとは  
   - リクエストを受けて処理の流れを制御する  
@@ -34,6 +34,7 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
 - ` Ok(...)`：HTTP200レスポンスを返す
 
 ### Viewを返すパターン
+
 ```scala
 def hello(name: String) = Action {
   Ok(views.html.hello(name))

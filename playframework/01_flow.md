@@ -1,4 +1,4 @@
-# 基本構造とリクエスト処理の流れ
+# 1. 基本構造とリクエスト処理の流れ
 
 ### 目次
 
@@ -58,4 +58,6 @@ POST      /user/create   controllers.UserController.createUser
   GET   /users/:id      controllers.UserController.show(id: Long)
   ```
 
-→[Controllerの書き方と役割](02_controller.md)
+
+
+→[2. Controllerの書き方と役割](02_controller.md)
