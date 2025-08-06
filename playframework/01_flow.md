@@ -27,7 +27,9 @@ project-root/
 1. ` routes`ファイルでURLに対応するControllerのメソッドが決まる  
 2. Controllerが呼ばれ、必要に応じてModelやViewを呼ぶ  
 3. 結果（HTMLまたはJSONなど）を生成し、レスポンスとして返す  
-   
+
+<br>
+
 ```css
 [ブラウザ] → URLアクセス
       ↓
@@ -58,6 +60,6 @@ POST      /user/create   controllers.UserController.createUser
   GET   /users/:id      controllers.UserController.show(id: Long)
   ```
 
-
+<br>
 
 →[2. Controllerの書き方と役割](02_controller.md)
