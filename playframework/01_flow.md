@@ -57,3 +57,5 @@ POST      /user/create   controllers.UserController.createUser
   ```bash
   GET   /users/:id      controllers.UserController.show(id: Long)
   ```
+
+→[Controllerの書き方と役割](02_controller.md)
