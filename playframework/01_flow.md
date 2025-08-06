@@ -24,7 +24,7 @@ project-root/
 ## リクエスト処理の流れ
 
 ユーザーがブラウザでページにアクセスすると、  
-1. ` routes`ファイルでURLに対応するControllerのメソッドが決まる  
+1. `routes`ファイルでURLに対応するControllerのメソッドが決まる  
 2. Controllerが呼ばれ、必要に応じてModelやViewを呼ぶ  
 3. 結果（HTMLまたはJSONなど）を生成し、レスポンスとして返す  
 
@@ -42,7 +42,7 @@ project-root/
 
 ## routesファイルの基本構文
 
-- ファイル場所：` conf/routes`  
+- ファイル場所：`conf/routes`  
 
 ```pgsql
 メソッド   パス            コントローラとアクション

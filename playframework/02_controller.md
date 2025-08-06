@@ -11,7 +11,8 @@ Controllerとは
 
 ## Controllerの基本構文（Play + Scala）
 
-ファイル例：` app/controllers/HomeController.scala`
+<details><summary>ファイル例：`app/controllers/HomeController.scala`</summary>
+
 ```scala
 package controllers
 
@@ -27,11 +28,13 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
 }
 ```
 
-- ` @Singleton`：このクラスはアプリ全体で1つだけ使われる
-- ` @Inject()`：DI（依存性注入）で必要な部品（ここではCC）を受け取る
-- ` ControllerComponents`：コントローラに必要な共通機能のセット
-- ` Action { ... }`：HTTPリクエストに対するアクション定義
-- ` Ok(...)`：HTTP200レスポンスを返す
+</details>
+
+- `@Singleton`：このクラスはアプリ全体で1つだけ使われる
+- `@Inject()`：DI（依存性注入）で必要な部品（ここではCC）を受け取る
+- `ControllerComponents`：コントローラに必要な共通機能のセット
+- `Action { ... }`：HTTPリクエストに対するアクション定義
+- `Ok(...)`：HTTP200レスポンスを返す
 
 ### Viewを返すパターン
 
@@ -41,5 +44,9 @@ def hello(name: String) = Action {
 }
 ```
 
-- ` views.html.hello`は` app/views/hello.scala.html`に対応
+- `views.html.hello`は`app/views/hello.scala.html`に対応
 - ScalaテンプレートエンジンTwirlでHTMLを生成
+
+<br>
+
+→[PlayのView（Twirlテンプレート）とHTML生成](03_view.md)
