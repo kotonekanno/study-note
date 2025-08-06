@@ -1,4 +1,4 @@
-# 1. 基本構造とリクエスト処理の流れ
+# 1. 基本構造と流れ
 
 ### 目次
 
@@ -62,4 +62,4 @@ POST      /user/create   controllers.UserController.createUser
 
 <br>
 
-→[2. Controllerの書き方と役割](02_controller.md)
+→[2. Controller](02_controller.md)

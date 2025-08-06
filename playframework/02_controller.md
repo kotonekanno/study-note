@@ -1,4 +1,4 @@
-# 2. Controllerの書き方と役割
+# 2. Controller
 
 Controllerとは  
   - リクエストを受けて処理の流れを制御する  
@@ -11,7 +11,7 @@ Controllerとは
 
 ## Controllerの基本構文（Play + Scala）
 
-<details><summary>ファイル例：`app/controllers/HomeController.scala`</summary>
+<details><summary>ファイル例：app/controllers/HomeController.scala</summary>
 
 ```scala
 package controllers
@@ -49,4 +49,4 @@ def hello(name: String) = Action {
 
 <br>
 
-→[PlayのView（Twirlテンプレート）とHTML生成](03_view.md)
+→[3. View（Twirlテンプレート）](03_view.md)
