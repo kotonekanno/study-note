@@ -1,6 +1,6 @@
-# Study Note
-
-Github Pagesで見る：[https://kotonekanno.github.io/study-note/scala/](https://kotonekanno.github.io/study-note/)
+---
+title: Study Note
+---
 
 - [Scala](scala/)
 - [Play Framework](playframework/)
