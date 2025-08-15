@@ -63,4 +63,6 @@ loginForm.bindFromRequest.fold(
 - `@helper.form(...)`：フォームの開始タグと送信先を生成
 - `@helper.inputText(...)`：inputタグを自動生成し、エラー表示などもしてくれる
 
+<br>
+
 →[7. JSON API](07_json.md)

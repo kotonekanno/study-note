@@ -1,4 +1,4 @@
-# JSON APIとのやり取り
+# 7. JSON API
 
 ### 目次
 
