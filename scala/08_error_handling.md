@@ -160,7 +160,8 @@ println(result.getOrElse("No email found"))
 
 - `None`が1つでもあれば全体が`None`になる
 - `Some`ならばその中身を抽出して順に使える
-- `yield`の中が最終結果になる
+- `yield`の中が最終結果になる  
+
 参照：[サンプルコード](00_sample_codes.md#8-optionの合成処理)
 
 ### Eitherの合成
@@ -178,7 +179,8 @@ println(result) // Right(Send to: ユーザー@example.com)
 ```
 
 - `Left`が1つでも出たらその時点で打ち切られる（早期return）
-- `Right`同士ならば、合成されて最終的に`Right（結果）`になる
+- `Right`同士ならば、合成されて最終的に`Right（結果）`になる  
+
 参照：[サンプルコード](00_sample_codes.md#8-eitherの合成処理)
 
 <br>

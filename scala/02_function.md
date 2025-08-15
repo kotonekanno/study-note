@@ -135,7 +135,7 @@ val result = applyTo10(square)
 println(result) // 100
 ```
 
-- `applyTo10`：関数を引数に撮り、それを10に適用する関数
+- `applyTo10`：関数を引数に撮り、それを10に適用する関数  
 参照：[サンプルコード](00_sample_codes.md#2-高階関数)
 
 <br>

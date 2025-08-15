@@ -40,5 +40,6 @@ f.onComplete {
 <br>
 
 - `import ExecutionContext.Implicits.global`でスレッドプールの設定が必要
-- `Await.result`で同期的に結果を待てるが、多様は避ける
+- `Await.result`で同期的に結果を待てるが、多様は避ける  
+
 参照：[サンプルコード](00_sample_codes.md#9-非同期処理)
