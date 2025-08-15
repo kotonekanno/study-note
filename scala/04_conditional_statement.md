@@ -1,9 +1,31 @@
-# match式
+# 3. 条件分岐
 
 ### 目次
 
-- [match式](#match式-1)
-- [パターンマッチング](#パターンマッチング)
+- [if式](#if式)
+- [match式](#match式)
+  - [パターンマッチング](#パターンマッチング)
+
+<br>
+
+## if式
+
+- 基本文法
+  
+  ```scala
+  val result = if (age >= 20) "adult" else "minor"
+  ```
+
+- Scalaではifは式（expression）であり、値を返す
+  ```scala
+  val status = if (age >= 65) "senior"
+               else if (age >= 20) "adult"
+               else "minor"
+  ```
+
+<br>
+
+参照：[サンプルコード](00_sample_codes.md#4-if式)
 
 <br>
 
@@ -29,7 +51,7 @@ println(result) // "two"
 
 <br>
 
-## パターンマッチング
+### パターンマッチング
 
 - match文と`case class`の組み合わせ
 - `case class`の構造をそのまま分解できる
@@ -45,8 +67,8 @@ u match {
 
 <br>
 
-参照：[サンプルコード](00_sample_codes.md#7-match式)
+参照：[サンプルコード](00_sample_codes.md#4-match式)
 
 <br>
 
-→[Option型](08_option_type.md)
+→[5. 繰り返し](05_loop_statement.md)

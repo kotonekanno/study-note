@@ -1,4 +1,4 @@
-# クラス
+# 6. クラス
 
 ### 目次
 
@@ -48,7 +48,7 @@ class Person(name: String, age: Int) {
   class Person(val name: String, val kind: String)
   ```
 
-- 参照：[サンプルコード](00_sample_codes.md#6-クラス定義とコンストラクタ)
+参照：[サンプルコード](00_sample_codes.md#6-クラス定義とコンストラクタ)
 
 <br>
 
@@ -181,7 +181,7 @@ val result = add(2)(3)  // 5
 
 ### 部分適用（Partial Application）
 
-カリー化されt何晏数に一部の引数だけを先に与えて、残りを後で与えるテクニック
+カリー化された関数に一部の引数だけを先に与えて、残りを後で与えるテクニック
 
 ```scala
 val add2 = add(2)     // b: Int => Int
@@ -196,7 +196,7 @@ println(add2(5))      // 7
   ```
 
   - 明示的に関数として扱う
-  - 方推論がきかない場面では、`_`が必要な場合もある
+  - 型推論が効かない場面では、`_`が必要な場合もある
 
 <br>
 
@@ -204,4 +204,4 @@ println(add2(5))      // 7
 
 <br>
 
-→[7. match式](07_match_statement.md)
+→[7. 継承](07_inheritance.md)

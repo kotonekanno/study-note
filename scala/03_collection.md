@@ -1,4 +1,4 @@
-# コレクション（List）
+# 4. コレクション（List）
 
 ### 目次
 
@@ -37,7 +37,7 @@ val list3 = list1 :+ 5    // 末尾に5を追加した新しいリスト
   - `::`：リストの先頭に要素を追加（新しいリストが返る）
   - `:+`：リストの末尾に要素を追加（新しいリストが返る）
 
-参照：[サンプルコード](00_sample_codes.md#4-基本操作)
+参照：[サンプルコード](00_sample_codes.md#3-基本操作)
 
 <br>
 
@@ -55,7 +55,7 @@ val list3 = list1 :+ 5    // 末尾に5を追加した新しいリスト
   val evenNumbers = numbers.filter(n => n % 2 == 0)
   ```
 
-参照：[サンプルコード](00_sample_codes.md#4-関数型コレクション操作)
+参照：[サンプルコード](00_sample_codes.md#3-関数型コレクション操作)
 
 <br>
 
@@ -100,8 +100,8 @@ val product = numbers.fold(1)((a, b) => a * b)  // 24
 
 <br>
 
-参照：[サンプルコード](00_sample_codes.md#4-listの高階関数操作)
+参照：[サンプルコード](00_sample_codes.md#3-listの高階関数操作)
 
 <br>
 
-→[5. for式](05_for_statement.md)
+→[4. 条件分岐](04_conditional_statement.md)

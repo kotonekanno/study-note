@@ -39,7 +39,52 @@ def main(args: Array[String]): Unit = {
 }
 ```
 
-### 3-if式
+### 3-基本操作
+
+```scala
+def main(args: Array[String]): Unit = {
+  val numbers = List(1, 2, 3, 4, 5)
+  println(numbers.head)
+  println(numbers.tail)
+  println(numbers.isEmpty)
+
+  val tailList = numbers.tail
+  println(tailList.head)
+}
+```
+
+### 3-関数型コレクション操作
+
+```scala
+def main(args: Array[String]): Unit = {
+  val numbers = List(1, 2, 3, 4, 5)
+  val doubledNumbers = numbers.map(_ * 2)
+  val evenNumbers = numbers.filter(n => n % 2 == 0)
+
+  println(numbers)
+  println(doubledNumbers)
+  println(evenNumbers)
+}
+```
+
+### 3-Listの高階関数操作
+
+```scala
+def main(args: Array[String]): Unit = {
+  val words = List("I am", "learning Scala", "and it's fun")
+  val flattenedWords = words.flatMap(_.split(" "))
+  println(flattenedWords)
+  println(flattenedWords.length)
+
+  val numbers = List(1, 2, 3, 4, 5)
+  val added = numbers.reduce((x, y) => x + y)
+  val multiplied = numbers.fold(1)((x, y) => x * y)
+  println(added)
+  println(multiplied)
+}
+```
+
+### 4-if式
 
 ```scala
 def isEven(n: Int): Boolean = n % 2 == 0
@@ -59,48 +104,21 @@ def main(args: Array[String]): Unit = {
 }
 ```
 
-### 4-基本操作
+### 4-match式
 
 ```scala
+case class Animal(kind: String, name: String)
+
 def main(args: Array[String]): Unit = {
-  val numbers = List(1, 2, 3, 4, 5)
-  println(numbers.head)
-  println(numbers.tail)
-  println(numbers.isEmpty)
+  val dog = Animal("dog", "John")
+  
+  val msg = dog match {
+    case Animal("dog", name) => s"This is a dog named $name."
+    case Animal("cat", name) => s"This is a cat named $name."
+    case Animal(kind, name)  => s"Unknow animal: $kind"
+  }
 
-  val tailList = numbers.tail
-  println(tailList.head)
-}
-```
-
-### 4-関数型コレクション操作
-
-```scala
-def main(args: Array[String]): Unit = {
-  val numbers = List(1, 2, 3, 4, 5)
-  val doubledNumbers = numbers.map(_ * 2)
-  val evenNumbers = numbers.filter(n => n % 2 == 0)
-
-  println(numbers)
-  println(doubledNumbers)
-  println(evenNumbers)
-}
-```
-
-### 4-Listの高階関数操作
-
-```scala
-def main(args: Array[String]): Unit = {
-  val words = List("I am", "learning Scala", "and it's fun")
-  val flattenedWords = words.flatMap(_.split(" "))
-  println(flattenedWords)
-  println(flattenedWords.length)
-
-  val numbers = List(1, 2, 3, 4, 5)
-  val added = numbers.reduce((x, y) => x + y)
-  val multiplied = numbers.fold(1)((x, y) => x * y)
-  println(added)
-  println(multiplied)
+  println(msg)
 }
 ```
 
@@ -151,7 +169,17 @@ def main(args: Array[String]): Unit = {
 }
 ```
 
-### 6-継承
+### 6-カリー化と部分適用
+
+```scala
+def main(args: Array[String]): Unit = {
+  def multiply (a: Int) (b: Int): Int = a * b
+  val double = multiply(2)
+  println(double(5))
+}
+```
+
+### 7-継承
 
 ```scala
 abstract class Shape {
@@ -175,31 +203,23 @@ def main(args: Array[String]): Unit = {
 }
 ```
 
-### 6-カリー化と部分適用
+### 7-トレイト
 
 ```scala
-def main(args: Array[String]): Unit = {
-  def multiply (a: Int) (b: Int): Int = a * b
-  val double = multiply(2)
-  println(double(5))
+trait Walker {
+  def walk(): String = "I'm walking"
 }
-```
 
-### 7-match式
+trait Talker {
+  def talk(): String = "I'm talking"
+}
 
-```scala
-case class Animal(kind: String, name: String)
+class Robot extends Walker with Talker
 
 def main(args: Array[String]): Unit = {
-  val dog = Animal("dog", "John")
-  
-  val msg = dog match {
-    case Animal("dog", name) => s"This is a dog named $name."
-    case Animal("cat", name) => s"This is a cat named $name."
-    case Animal(kind, name)  => s"Unknow animal: $kind"
-  }
-
-  println(msg)
+  val robot = new Robot
+  println(robot.walk())
+  println(robot.talk())
 }
 ```
 
@@ -237,5 +257,83 @@ def main(args: Array[String]): Unit = {
     .map(_ + "!!!")
     .getOrElse("Not found...")
   println(msg)
+}
+```
+
+### 8-Either
+
+```scala
+def main(args: Array[String]): Unit = {
+  def safeDivide2(a: Int, b: Int): Either[String, Int] = {
+    if(b == 0) Left("Division by zero")
+    else Right(a / b)
+  }
+
+  println(safeDivide2(10, 0))
+  println(safeDivide2(10, 2))
+}
+```
+
+### 8-Optionの合成処理
+
+```scala
+def parseInt(s: String): Option[Int] = scala.util.Try(s.toInt).toOption
+def nonZero(n: Int): Option[Int] = if (n == 0) None else Some(n)
+def inverse(n: Int): Option[Double] = Some(1.0 / n)
+
+def main(args: Array[String]): Unit = {
+  val result = for {
+    i <- parseInt("5")
+    nz <- nonZero(i)
+    inv <- inverse(nz)
+  }yield inv
+
+  println(result)
+}
+```
+
+### 8-Eitherの合成処理
+
+```scala
+def parseInt(s: String): Either[String, Int] =
+  scala.util.Try(s.toInt).toEither.left.map(_ => "Invalid number")
+
+def nonZero(n: Int): Either[String, Int] =
+  if (n == 0) Left("Division by zero") else Right(n)
+
+def inverse(n: Int): Either[String, Double] =
+  Right(1.0 / n)
+
+def main(args: Array[String]): Unit = {
+  val result = for {
+    i <- parseInt("5")
+    nz <- nonZero(i)
+    inv <- inverse(nz)
+  }yield inv
+
+  println(result)
+}
+```
+
+### 9-非同期処理
+
+```scala
+import scala.concurrent._
+import ExecutionContext.Implicits.global
+import scala.util.{Success, Failure}
+import scala.concurrent.duration._
+
+def main(args: Array[String]): Unit = {
+  val f = Future {
+    Thread.sleep(1000)
+    100
+  }
+
+  f.onComplete {
+    case Success(value) => println(s"Result is $value")
+    case Failure(e)     => println(s"Failed with $e")
+  }
+
+  Await.result(f, 2.seconds)
 }
 ```
