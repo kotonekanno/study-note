@@ -17,6 +17,8 @@
   - [カリー化（Currying）](#カリー化currying)
   - [部分適用（Partial Application）](#部分適用partial-application)
 
+<br>
+
 ## クラス定義とコンストラクタ
 
 Javaと異なり、Scalaではコンストラクタとクラス定義が一体化されている
@@ -47,6 +49,8 @@ class Person(name: String, age: Int) {
   ```
 
 - 参照：[サンプルコード](00_sample_codes.md#6-クラス定義とコンストラクタ)
+
+<br>
 
 ## case class（データクラス）
 
@@ -114,6 +118,8 @@ val u2 = u1.copy(age = 30)  // nameはそのまま、ageだけ変更
 
 参照：[サンプルコード](00_sample_codes.md#6-case-class)
 
+<br>
+
 ## 継承
 
 ### 基本的な継承構文
@@ -155,6 +161,8 @@ class Dog(name: String) extends Animal(name) {
 <br>
 
 参照：[サンプルコード](00_sample_codes.md#6-継承)
+
+<br>
 
 ## カリー化と部分適用
 

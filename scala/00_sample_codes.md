@@ -89,6 +89,7 @@ def main(args: Array[String]): Unit = {
 
 ### 4-Listの高階関数操作
 
+```scala
 def main(args: Array[String]): Unit = {
   val words = List("I am", "learning Scala", "and it's fun")
   val flattenedWords = words.flatMap(_.split(" "))
@@ -101,6 +102,7 @@ def main(args: Array[String]): Unit = {
   println(added)
   println(multiplied)
 }
+```
 
 ### 5-for式
 
@@ -151,6 +153,7 @@ def main(args: Array[String]): Unit = {
 
 ### 6-継承
 
+```scala
 abstract class Shape {
   def area(): Double
 }
@@ -170,14 +173,17 @@ def main(args: Array[String]): Unit = {
   println(c.area())
   println(r.area())
 }
+```
 
 ### 6-カリー化と部分適用
 
+```scala
 def main(args: Array[String]): Unit = {
   def multiply (a: Int) (b: Int): Int = a * b
   val double = multiply(2)
   println(double(5))
 }
+```
 
 ### 7-match式
 

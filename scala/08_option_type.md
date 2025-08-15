@@ -8,10 +8,14 @@
   - [.map](#map)
   - [.getOrElse](#getorelse)
 
+<br>
+
 ## Option型の背景
 
 - Javaやほかの言語では`null`が多用され、その扱いでバグが多発する
 - Scalaは`null`の代わりに`Option`型を使い、安全に値の有無を表現する
+
+<br>
 
 ## Option型の構造
 
@@ -30,6 +34,7 @@
 <br>
 
 - 基本例
+  
   ```scala
   def findName(id: Int): Option[String] = {
     if (id == 1) Some("Alice")

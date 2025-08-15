@@ -4,6 +4,8 @@
 
 - [for式](#for式-1)
 
+<br>
+
 ## 基本文法
   
 ```scala
@@ -15,6 +17,8 @@ for (n <- numbers) {
 ```
 
 - `numbers`の全要素を順に取り出し、`println`で出力する
+
+<br>
 
 ## フィルタとyield
 

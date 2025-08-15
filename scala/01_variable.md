@@ -7,6 +7,8 @@
 - [Scalaのデータ型](#scalaのデータ型)
 - [文字列補完（String Interpolation）](#文字列補完string-interpolation)
 
+<br>
+
 ## 変数定義
 
 - `val`：再代入不可（イミュータブル）
@@ -22,6 +24,8 @@ var age = 20
 
 参照：[サンプルコード](00_sample_codes.md#1-変数定義)
 
+<br>
+
 ## 型推論
 
 - Scalaでは右辺から型を推論してくれるため、明示的に書かなくてもよい
@@ -30,6 +34,8 @@ var age = 20
   ```scala
   val score: Int = 95
   ```
+
+<br>
 
 ## Scalaのデータ型
 
@@ -56,6 +62,8 @@ var age = 20
   - `AnyRef`：参照型（Javaのオブジェクト型）のスーパークラス
   - `Option`：値が存在するかもしれないし、ないかもしれないことを表す型
   - `List`, `Array`, `Map`, `Set`：コレクション型
+
+<br>
 
 ## 文字列補完（String Interpolation）
 
