@@ -1,3 +1,3 @@
 # Study Note
 
-- [Play Framework](#playframework/)
+- [Play Framework](playframework/)
