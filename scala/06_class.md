@@ -4,13 +4,17 @@
 
 - [クラス定義とコンストラクタ](#クラス定義とコンストラクタ)
 - [case class（データクラス）](#case-classデータクラス)
+  - [apply](#apply)
+  - [unapply](#unapply)
   - [toString](#tostring)
   - [equals](#equals)
   - [hashCode](#hashcode)
   - [copy](#copy)
-  - [パターンマッチング（match）](#パターンマッチングmatch)
 - [オブジェクト](#オブジェクト)
-  - [コンパニオンオブジェクト](#コンパニオンオブジェクト)
+- [コンパニオンオブジェクト](#コンパニオンオブジェクト)
+  - [applyの役割](#applyの役割)
+  - [unapplyの役割](#unapplyの役割)
+- [型クラス・暗黙パラメータ](#型クラス暗黙パラメータ)
 - [カリー化と部分適用](#カリー化と部分適用)
   - [カリー化（Currying）](#カリー化currying)
   - [部分適用（Partial Application）](#部分適用partial-application)
@@ -179,6 +183,55 @@ val u2 = u1.copy(age = 30)  // nameはそのまま、ageだけ変更
 <br>
 
 参照：[サンプルコード](00_sample_codes.md#6-applyunapply)
+
+<br>
+
+## 型クラス・暗黙パラメータ
+
+- 同じ関数でも型ごとに振る舞いを変えることができる
+- Javaなどではstaticに近い仕組みで書くことができるが、
+- Scalaでは「型クラス」と「暗黙パラメータ」を組み合わせ、柔軟に処理を抽象化できる
+
+- 型クラスの定義
+
+  ```scala
+  trait Show[T] {
+    def show(x: T): String
+  }
+  ```
+
+- given：型クラスのインスタンス、暗黙的に渡される値
+
+  ```scala
+  given Show[Int] with {
+    def show(x: Int): String = x.toString
+  }
+  
+  given Show[String] with {
+    def show(x: String): String = x
+  }
+  ```
+
+- using：パラメータで暗黙的に受け取る
+
+  ```scala
+  def printShow[T](x: T)(using s: Show[T]): Unit = {
+    println(s.show(x))
+  }
+  ```
+
+- 呼び出し
+
+  ```scala
+  printShow(123)       // Int 用 given が自動で使われる
+  printShow("Scala")   // String 用 given が自動で使われる
+  ```
+
+- 明示的に渡すことも可能（`printShow(123)(using Show[Int])`）
+
+<br>
+
+参照：[サンプルコード](00_sample_codes.md#6-型クラス)
 
 <br>
 
