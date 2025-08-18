@@ -12,14 +12,14 @@
 
 <br>
 
-## コレクション
+## List
 
 - ScalaのListはイミュータブルなコレクション
 - Javaの`ArrayList`と異なり、基本的に操作は新しいリストを返す形
   
 <br>
 
-## 基本操作
+### 基本操作
 
 ```scala
 val numbers = List(1, 2, 3, 4)
@@ -41,7 +41,7 @@ val list3 = list1 :+ 5    // 末尾に5を追加した新しいリスト
 
 <br>
 
-## 関数型コレクション操作
+### 関数型コレクション操作
 
 - `map`：リストの各要素に関数を適用し、新しいリストを返す
   
@@ -59,9 +59,9 @@ val list3 = list1 :+ 5    // 末尾に5を追加した新しいリスト
 
 <br>
 
-## Listの高階関数操作
+### Listの高階関数操作
 
-### flatMap
+#### flatMap
 
 map + flatten
 
@@ -74,7 +74,7 @@ val result = data.flatMap(str => str.split(" "))
 - `map`で`"a b"`→`["a","b"]`に変換
 - その結果を1つのリストにまとめる（`flatten`）
 
-### reduce
+#### reduce
 
 累積的に要素を処理
 
@@ -86,7 +86,7 @@ val sum = numbers.reduce((a, b) => a + b)  // 10
 - `reduce`：最初の2つの要素に関数を適用し、その結果と次の要素にまた適用...と繰り返す
 - 要素が1つ以上必要（空リストだと例外）
 
-### fold
+#### fold
 
 `reduce`と似ているが、初期値がある
 
