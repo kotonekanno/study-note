@@ -9,10 +9,8 @@
   - [hashCode](#hashcode)
   - [copy](#copy)
   - [パターンマッチング（match）](#パターンマッチングmatch)
-- [継承](#継承)
-  - [基本的な継承構文](#基本的な継承構文)
-  - [コンストラクタの継承](#コンストラクタの継承)
-  - [抽象クラスとトレイト](#抽象クラスとトレイト)
+- [オブジェクト](#オブジェクト)
+  - [コンパニオンオブジェクト](#コンパニオンオブジェクト)
 - [カリー化と部分適用](#カリー化と部分適用)
   - [カリー化（Currying）](#カリー化currying)
   - [部分適用（Partial Application）](#部分適用partial-application)
@@ -58,18 +56,33 @@ class Person(name: String, age: Int) {
 - Scalaでは、より簡潔で強力
 
 ```scala
-case class Person(name: String, age: Int)
+case class User(id: Int, name: String)
 ```
 
-`case class`を定義すると、
-- `new`不要に
-- 自動で`toString`, `equals`, `hashCode`, `copy`, `パターンマッチング`が使える
+`case class`を定義すると、以下のメソッドが自動生成される
+- `apply`：`new`を省略してインスタンス生成
+- `unapply`：パターンマッチングで値を取り出す
+- `toString`：オブジェクトの文字列表現
+- `equals`：オブジェクトの内容が等しいか判定
+- `hashCode`：`equals`とセットで使えるハッシュ値
+- `copy`：一部フィールドだけを変更した新しいインスタンスを作れる
+- フィールドは自動で`val`扱いになる（外部から読み取り可能に）
+
+### apply
+
+- `new`を省略してインスタンスを生成できる
+- 詳細は[後述](#applyの役割)
+
+### unapply
+
+- パターンマッチングでインスタンスの中身を取り出すときに使う
+- 詳細は[後述](#unapplyの役割)
 
 ### toString
 
 - オブジェクトの文字列表現を返すメソッド
 - 通常の`class`ではデフォルトでは難解（オーバーライドすればよい）
-- `case class`では自動でわかりやすく生成される
+- `case class`では自動でわかりやすく生成される（例：`Class(str=Hoge)`）
 
 ```scala
 case class User(name: String, age: Int)
@@ -110,57 +123,62 @@ val u1 = User("Alice", 20)
 val u2 = u1.copy(age = 30)  // nameはそのまま、ageだけ変更
 ```
 
-### パターンマッチング（match）
-
-参照：[パターンマッチング](07_match_statement.md#パターンマッチング)
-
 <br>
 
 参照：[サンプルコード](00_sample_codes.md#6-case-class)
 
 <br>
 
-## 継承
+## オブジェクト
 
-### 基本的な継承構文
+- 1回だけ作られるシングルトンオブジェクト
+- `class`と異なり、`new`でインスタンス化する必要がない
+- Javaの`static`のように、「どこからでも呼べる便利な機能」をまとめるのに使う
 
-Scalaのクラスは`extends`キーワードで継承する
-
-```scala
-class Animal {
-  def speak(): String = "..."
-}
-
-class Dog extends Animal {
-  override def speak(): String = "Woof!"
-}
-```
-
-- `override`修飾子は必須（Javaは任意）
-- メソッド名、引数、戻り値の型は一致させる必要がある
-
-### コンストラクタの継承
-
-親クラスにコンストラクタがある場合、子クラスで明示的に呼び出す
-
-```scala
-class Animal(val name: String) {
-  def speak(): String = "..."
-}
-
-class Dog(name: String) extends Animal(name) {
-  override def speak(): String = s"$name says Woof!"
-}
-```
-
-### 抽象クラスとトレイト
-
-- `abstruct class`：抽象メソッドを持てるクラス
-- `trait`：Javaのインターフェースに近いが、実装も持てる
+参照：[サンプルコード](00_sample_codes.md#6-オブジェクト)
 
 <br>
 
-参照：[サンプルコード](00_sample_codes.md#6-継承)
+## コンパニオンオブジェクト
+
+- `class`と`object`が同じ名前で同じファイルにある場合、その`object`をコンパニオンオブジェクトという
+- `class`に`apply`メソッドなどを追加したり、`case class`で自動生成されるメソッドをカスタマイズしたりできる
+
+<br>
+
+- `class`：インスタンスを作る設計図
+- `object`：クラスに関連する便利なメソッド・定数をまとめる場所
+
+参照：[サンプルコード](00_sample_codes.md#6-コンパニオンオブジェクト)
+
+### applyの役割
+
+- コンパニオンオブジェクトに書くと、`new`を省略してインスタンスを生成できる
+- `case class User(id: Int, name: String`を定義した時、以下のような`apply`メソッドが自動生成されている
+  
+  ```scala
+  def apply(name: String): User = new User(id, name)
+  ```
+
+- `user = User(1, "John")`のように呼び出した時、実際には`User.apply`が呼び出されている
+
+### unapplyの役割
+
+- パターンマッチングでインスタンスの中身を取り出すときに使う
+- `case class User(id: Int, name: String`を定義した時、以下のような`unapply`メソッドが自動生成されている
+
+  ```scala
+  def unapply(user: User): Option[(Int, String)] = Some((user.id, user.name))
+  ```
+
+- `case User(i, n)`のようにパターンマッチングを行う時、実際には`User.unapply`が呼び出されている
+- `User(i, n)`のi, nに値が展開される
+
+参照：[パターンマッチング](07_conditional_statement.md#パターンマッチング)
+
+<br>
+
+参照：[サンプルコード](00_sample_codes.md#6-applyunapply)
 
 <br>
 
