@@ -5,6 +5,7 @@
 - [if式](#if式)
 - [match式](#match式)
   - [パターンマッチング](#パターンマッチング)
+  - [部分関数（Partial Function）](#部分関数partial-function)
 
 <br>
 
@@ -62,6 +63,17 @@ println(result) // "two"
 u match {
   case User("Alice", _) => println("Hi Alice!")
   case User(name, age) => println(s"$name is $age years old.")
+}
+```
+
+### 部分関数（Partial Function）
+
+`case`を使って特定の入力にだけ反応する関数
+
+```scala
+{
+  case 0 => "zero"
+  case _ => "other"
 }
 ```
 

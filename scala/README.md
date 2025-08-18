@@ -9,5 +9,4 @@
 - [5. 繰り返し](05_loop_statement.md)
 - [6. クラス](06_class.md)
 - [7. 継承](07_inheritance.md)
-- [8. エラーハンドリング](08_error_handling.md)
-- [9. 非同期処理](09_future.md)
+- [8. FP（関数型プログラミング）](08_fp.md)

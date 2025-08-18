@@ -14,10 +14,6 @@
 - [コンパニオンオブジェクト](#コンパニオンオブジェクト)
   - [applyの役割](#applyの役割)
   - [unapplyの役割](#unapplyの役割)
-- [型クラス・暗黙パラメータ](#型クラス暗黙パラメータ)
-- [カリー化と部分適用](#カリー化と部分適用)
-  - [カリー化（Currying）](#カリー化currying)
-  - [部分適用（Partial Application）](#部分適用partial-application)
 
 <br>
 
@@ -74,7 +70,7 @@ case class User(id: Int, name: String)
 
 ### apply
 
-- `new`を省略してインスタンスを生成できる
+- これにより、`new`を省略してインスタンスを生成できる
 - 詳細は[後述](#applyの役割)
 
 ### unapply
@@ -182,97 +178,6 @@ val u2 = u1.copy(age = 30)  // nameはそのまま、ageだけ変更
 <br>
 
 参照：[サンプルコード](00_sample_codes.md#6-applyunapply)
-
-<br>
-
-## 型クラス・暗黙パラメータ
-
-- 同じ関数でも型ごとに振る舞いを変えることができる
-- Javaなどではstaticに近い仕組みで書くことができるが、
-- Scalaでは「型クラス」と「暗黙パラメータ」を組み合わせ、柔軟に処理を抽象化できる
-
-<br>
-
-- 型クラスの定義
-
-  ```scala
-  trait Show[T] {
-    def show(x: T): String
-  }
-  ```
-
-- given：型クラスのインスタンス、暗黙的に渡される値
-
-  ```scala
-  given Show[Int] with {
-    def show(x: Int): String = x.toString
-  }
-  
-  given Show[String] with {
-    def show(x: String): String = x
-  }
-  ```
-
-- using：パラメータで暗黙的に受け取る
-
-  ```scala
-  def printShow[T](x: T)(using s: Show[T]): Unit = {
-    println(s.show(x))
-  }
-  ```
-
-- 呼び出し
-
-  ```scala
-  printShow(123)       // Int 用 given が自動で使われる
-  printShow("Scala")   // String 用 given が自動で使われる
-  ```
-
-- 明示的に渡すことも可能（`printShow(123)(using Show[Int])`）
-
-<br>
-
-参照：[サンプルコード](00_sample_codes.md#6-型クラス)
-
-<br>
-
-## カリー化と部分適用
-
-### カリー化（Currying）
-
-複数引数の関数を、引数1つずつで呼び出せるように分割する技法
-
-```scala
-def add(a: Int)(b: Int): Int = a + b
-
-val result = add(2)(3)  // 5
-```
-
-- `add`は実際には「`Int => (Int => Int)`」という型
-- 先に`a`を与えることで、「`b`を待つ関数」になる
-
-### 部分適用（Partial Application）
-
-カリー化された関数に一部の引数だけを先に与えて、残りを後で与えるテクニック
-
-```scala
-val add2 = add(2)     // b: Int => Int
-println(add2(5))      // 7
-```
-
-- `add2`は「2を加える関数」になった
-- 以下のように、`_`を使うこともできる
-  
-  ```scala
-  val double = multiply(2) _
-  ```
-
-  - 明示的に関数として扱う
-  - 型推論が効かない場面では、`_`が必要な場合もある
-
-<br>
-
-参照：[サンプルコード](00_sample_codes.md#6-カリー化と部分適用)
 
 <br>
 

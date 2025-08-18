@@ -399,7 +399,7 @@ def main(args: Array[String]): Unit = {
 }
 ```
 
-### 9-非同期処理
+### 8-非同期処理
 
 ```scala
 import scala.concurrent._

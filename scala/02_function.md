@@ -9,6 +9,9 @@
 - [高階関数（Higher-Order Functions）](#高階関数higher-order-functions)
   - [関数を変数として定義する](#関数を変数として定義する)
   - [関数を引数として渡す](#関数を引数として渡す)
+- [カリー化と部分適用](#カリー化と部分適用)
+  - [カリー化（Currying）](#カリー化currying)
+  - [部分適用（Partial Application）](#部分適用partial-application)
 
 <br>
 
@@ -91,14 +94,8 @@
 
 ### 部分関数（Partial Function）
 
-`case`を使って特定の入力にだけ反応する関数
-
-```scala
-{
-  case 0 => "zero"
-  case _ => "other"
-}
-```
+- `case`を使って特定の入力にだけ反応する関数
+- 参照：[パターンマッチング](04_conditional_statement.md#部分関数partial-function)
 
 ### クロージャ（Closure）
 
@@ -135,8 +132,49 @@ val result = applyTo10(square)
 println(result) // 100
 ```
 
-- `applyTo10`：関数を引数に撮り、それを10に適用する関数  
+- `applyTo10`：関数を引数に撮り、それを10に適用する関数
+
 参照：[サンプルコード](00_sample_codes.md#2-高階関数)
+
+<br>
+
+## カリー化と部分適用
+
+### カリー化（Currying）
+
+複数引数の関数を、引数1つずつで呼び出せるように分割する技法
+
+```scala
+def add(a: Int)(b: Int): Int = a + b
+
+val result = add(2)(3)  // 5
+```
+
+- `add`は実際には「`Int => (Int => Int)`」という型
+- 先に`a`を与えることで、「`b`を待つ関数」になる
+
+### 部分適用（Partial Application）
+
+カリー化された関数に一部の引数だけを先に与えて、残りを後で与えるテクニック
+
+```scala
+val add2 = add(2)     // b: Int => Int
+println(add2(5))      // 7
+```
+
+- `add2`は「2を加える関数」になった
+- 以下のように、`_`を使うこともできる
+  
+  ```scala
+  val double = multiply(2) _
+  ```
+
+  - 明示的に関数として扱う
+  - 型推論が効かない場面では、`_`が必要な場合もある
+
+<br>
+
+参照：[サンプルコード](00_sample_codes.md#6-カリー化と部分適用)
 
 <br>
 
