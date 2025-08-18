@@ -169,6 +169,65 @@ def main(args: Array[String]): Unit = {
 }
 ```
 
+### 6-オブジェクト
+
+```scala
+object StringUtil {
+  def toUpper(s: String): String = s.toUpperCase
+  def toLower(s: String): String = s.toLowerCase
+}
+
+def main(args: Array[String]): Unit = {
+  val str1 = StringUtil.toUpper("String")
+  val str2 = StringUtil.toLower("String")
+  println(str1)
+  println(str2)
+}
+```
+
+### 6-コンパニオンオブジェクト
+
+```scala
+case class Book (title: String) {
+  def describe: String = {
+    s"This is a book titled $title."
+  }
+}
+
+object Book {
+  def apply(title: String): Book = new Book(title: String)
+  def empty(): Book = new Book("untitled")
+}
+
+def main(args: Array[String]): Unit = {
+  val book1 = Book("Scala Guide")
+  val book2 = Book.empty()
+  println(book1.describe)
+  println(book2.describe)
+}
+```
+
+### 6-apply/unapply
+
+```scala
+case class Person (name: String, age: Int)
+
+object Person {
+  def apply(name: String, age: Int): Person = new Person(name, age)
+  def unapply(person: Person): Option[(String, Int)] = Some(person.name, person.age)
+}
+
+def main(args: Array[String]): Unit = {
+  val alice = Person("Alice", 30)
+  val msg = alice match {
+    case Person(name, age) => s"$name is $age years old"
+    case _                 => "Unknown"
+  }
+
+  println(msg)
+}
+```
+
 ### 6-カリー化と部分適用
 
 ```scala
