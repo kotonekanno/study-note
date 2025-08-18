@@ -177,8 +177,7 @@ val u2 = u1.copy(age = 30)  // nameはそのまま、ageだけ変更
 
 - `case User(i, n)`のようにパターンマッチングを行う時、実際には`User.unapply`が呼び出されている
 - `User(i, n)`のi, nに値が展開される
-
-参照：[パターンマッチング](07_conditional_statement.md#パターンマッチング)
+- 参照：[パターンマッチング](07_conditional_statement.md#パターンマッチング)
 
 <br>
 
@@ -191,6 +190,8 @@ val u2 = u1.copy(age = 30)  // nameはそのまま、ageだけ変更
 - 同じ関数でも型ごとに振る舞いを変えることができる
 - Javaなどではstaticに近い仕組みで書くことができるが、
 - Scalaでは「型クラス」と「暗黙パラメータ」を組み合わせ、柔軟に処理を抽象化できる
+
+<br>
 
 - 型クラスの定義
 
