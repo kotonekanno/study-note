@@ -228,6 +228,31 @@ def main(args: Array[String]): Unit = {
 }
 ```
 
+### 6-型クラス
+
+```scala
+trait Formatter[T] {
+  def format(x: T): String
+}
+
+given Formatter[Int] with {
+  def format(x: Int): String = s"Int: $x"
+}
+
+given Formatter[Double] with {
+  def format(x: Double): String = s"Double: $x"
+}
+
+def printFormatted[T](x: T)(using f: Formatter[T]): Unit = {
+  println(f.format(x))
+}
+
+def main(args: Array[String]): Unit = {
+  printFormatted(42)
+  printFormatted(3.14)
+}
+```
+
 ### 6-カリー化と部分適用
 
 ```scala
