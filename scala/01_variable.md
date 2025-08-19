@@ -65,7 +65,21 @@ var age = 20
 
 <br>
 
-## 文字列補完（String Interpolation）
+## 数値
+
+### Scala標準ライブラリ（数値）
+
+- `abs`：絶対値
+- `max`/`min`：最大／最小
+- `sum`：合計
+- `product`：積
+- `toDouble`/`toInt`：型変換
+
+<br>
+
+## 文字列
+
+### 文字列補完（String Interpolation）
 
 ```scala
 val name = "Alice"
@@ -74,6 +88,14 @@ println(s"Hello, $name!")  // → Hello, Alice!
 
 - `s"文字列"`：文字列補完のプレフィックス
 - `${}`や`$変数名`で文字列に変数を埋め込める
+
+### Scala標準ライブラリ（文字列）
+
+- `stripMargin`：複数行文字列の余白を整形
+- `split`：正規表現で分割
+- `reaokace`/`replaceAll`：文字列置換
+- `toUpperCase`/`toLowerCase`：大文字／小文字変換
+- `format`：`printf`風の書式設定
 
 <br>
 
