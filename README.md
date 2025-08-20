@@ -12,3 +12,4 @@ Github Pagesで見る：https://kotonekanno.github.io/study-note/
 - [CSS](css/)
 - [JavaScript](javascript/)
 - [CoffeeScript](coffeescript/)
+- [jQuery](jquery/)
