@@ -66,4 +66,4 @@ scoreCheck = (score) ->
   console.log if score >= 80 then "Pass" else "Fail"
 ```
 
-→[ループ文](#03_loop.md)
+→[ループ文](03_loop.md)
