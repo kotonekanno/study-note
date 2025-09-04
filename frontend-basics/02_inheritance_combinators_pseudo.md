@@ -23,7 +23,7 @@
 
 ```css
 <style>
-  div{border: 1px solid gray;>
+  div{border: 1px solid gray;}
 </style>
 
 <div id=”parent”>親要素

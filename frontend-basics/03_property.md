@@ -30,6 +30,8 @@
   - [VGAカラー](#vgaカラー)
   - [色コード](#色コード)
   - [RGB関数表記](#rgb関数表記)
+- [子要素を親要素の中央に配置する方法](#子要素を親要素の中央に配置する方法)
+- [値まとめ](#値まとめ)
 
 <br>
 
@@ -231,3 +233,53 @@
 - `rgb()`を使用する
 - アルファ値を追加して半透明にすることができる（`rgba(0,0,0,0.5)`）
 - 完全な透明色：`transparent`
+
+<br>
+
+## 子要素を親要素の中央に配置する方法
+
+```css
+#parent{
+  width: 300px;
+  height: 300px;
+  border: 1px solid blue;
+  position: reletive;
+}
+.child{
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+}
+.center{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px
+  margin: auto;
+}
+```
+
+- `position`プロパティ：配置のプロパティ
+  - `reletive`：通常の配置
+  - `absolute`：`position: reletive;`を設定した親要素に対する絶対位置で配置
+
+<br>
+
+## 値まとめ
+
+- キーワード：`red`, `top`, `left`, `anime`, `linear`, `normal`, `both`
+- 数字の値
+- 単位の値：`px`, `%`, `s`（`s`以外は値が0の場合省略可能）
+- 16進数の値
+- CSS関数
+  - `transform: scale(3);`
+  - `background-image: url(" ");`
+  - `background: linear-gradient(white, gray);`
+  - 計算
+    - `margin-left: calc(50% - 50px);`
+    - `width: calc(100px * cos(30deg));`
+
+<br>
+
+→[4. リッチなCSS](04_rich_css.md)
