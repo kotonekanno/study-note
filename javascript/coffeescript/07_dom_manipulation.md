@@ -3,18 +3,18 @@
 ### 目次
 
 - [基本](#基本)
-  - [課題１](#課題１)
+  - [課題1](#課題1)
   - [課題2](#課題2)
   - [課題3](#課題3)
   - [課題4](#課題4)
 - [応用](#応用)
-  - [課題１：チェック付きToDo](#課題１チェック付きtodo)
-  - [課題２：ダブルクリックでリスト項目を編集](#課題２ダブルクリックでリスト項目を編集)
-  - [課題３：リアルタイム検索フィルター](#課題３リアルタイム検索フィルター)
+  - [課題1：チェック付きToDo](#課題1チェック付きtodo)
+  - [課題2：ダブルクリックでリスト項目を編集](#課題2ダブルクリックでリスト項目を編集)
+  - [課題3：リアルタイム検索フィルター](#課題3リアルタイム検索フィルター)
 
 ## 基本
 
-### 課題１
+### 課題1
 
 ```html
 <input type="text" id="itemInput">
@@ -28,7 +28,7 @@
 
 <br>
 
-解答例：
+<details> <summary>解答例：</summary>
 
 ```coffeescript
 $ ->
@@ -48,6 +48,8 @@ $ ->
 - `.trim`：空白入力の排除
 - `unless`：早期リターン
 
+</details>
+
 ### 課題2
 
 ```html
@@ -62,7 +64,7 @@ $ ->
 
 <br>
 
-解答例：
+<details> <summary>解答例：</summary>
 
 ```coffeescript
 $ ->
@@ -76,6 +78,8 @@ $ ->
     li.on 'click', -> $(this).remove()
     $("#taskInput").val('')
 ```
+
+</details>
 
 ### 課題3
 
@@ -91,7 +95,7 @@ $ ->
 
 <br>
 
-解答例；
+<details> <summary>解答例：</summary>
 
 ```coffeescript
 $ ->
@@ -106,6 +110,8 @@ $ ->
       li.on 'click', -> $(this).remove()
       $("#itemInput").val('')
 ```
+
+</details>
 
 ### 課題4
 
@@ -122,7 +128,7 @@ $ ->
 
 <br>
 
-解答例：
+<details> <summary>解答例：</summary>
 
 ```coffeescript
 $ ->
@@ -138,11 +144,13 @@ $ ->
     $('#noteInput').val('')
 ```
 
+</datails>
+
 <br>
 
 ## 応用
 
-### 課題１：チェック付きToDo
+### 課題1：チェック付きToDo
 
 ```html
 <input id="todoInput">
@@ -156,7 +164,7 @@ $ ->
 
 <br>
 
-解答例：
+<details> <summary>解答例：</summary>
 
 ```coffeescript
 $ ->
@@ -183,7 +191,9 @@ $ ->
 
 - 改善例：`toggleClass('done')`にして、CSS側で`text-decoration`を管理
 
-### 課題２：ダブルクリックでリスト項目を編集
+</details>
+
+### 課題2：ダブルクリックでリスト項目を編集
 
 ```html
 <input id="todoInput">
@@ -194,7 +204,7 @@ $ ->
 - `<li>`をダブルクリックすると、入力欄に変わる
 - 編集後にEnterを押すと確定し、テキスト表示に戻る
 
-### 課題３：リアルタイム検索フィルター
+### 課題3：リアルタイム検索フィルター
 
 ```html
 <input id="filterInput">
