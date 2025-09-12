@@ -1,10 +1,6 @@
 # JavaScript関連技術
 
 - [JavaScript](basics/)
-  - [JS標準メソッド](standard_methods.md)
-  0. [Webアプリ向けJavaScript](00_web_interactions.md)
-  1. [変数、データ型、演算子](01_basic.md)
-  2. [関数](02_function.md)
 - [CoffeeScript](coffeescript/)：JavaScriptの派生言語
   1. [関数](01_function.md)
   2. [if文](02_if_statement.md)
