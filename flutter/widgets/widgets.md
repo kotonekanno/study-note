@@ -50,9 +50,9 @@
 
 ## EdgeInsets
 
-- `EdgeInsets.all(value)`：4辺同じ余白
-- `EdgeInsets.symmetric(horizontal: x, vertical: y)`：横・縦別指定
-- `EdgeInsets.only(left: l, top; t, right: r, bottom: b)`：個別指定
+- 4辺同じ余白：`EdgeInsets.all(value)`
+- 横・縦別指定：`EdgeInsets.symmetric(horizontal: x, vertical: y)`
+- 個別指定：`EdgeInsets.only(left: l, top; t, right: r, bottom: b)`
 
 ## Color
 
@@ -62,15 +62,15 @@
 
 ## Alignment
 
-- `Alignment.center`：中央
-- `Alignment.topLeft`/`Alignment.topRight`：上左／上右
-- `Alignment.bottomLeft`/`Alignment.bottomRight`：下左／下右
-- `Alignment.topCenter`/`Alignment.bottomCenter`：上中央／下中央
-- `Alignment.centerLeft`/`Alignment.centerRight`：左中央／右中央
+- 中央：`Alignment.center`
+- 上左／上右：`Alignment.topLeft`/`Alignment.topRight`
+- 下左／下右：`Alignment.bottomLeft`/`Alignment.bottomRight`
+- 上中央／下中央：`Alignment.topCenter`/`Alignment.bottomCenter`
+- 左中央／右中央：`Alignment.centerLeft`/`Alignment.centerRight`
 
 <br>
 
-- `Alignment(x, y)`：x, y座標で微調整
+- x, y座標で微調整：`Alignment(x, y)`
   - `x`：横方向（-1.0~1.0）
   - `y`：縦方向（-1.0~1.0）
 
@@ -121,7 +121,7 @@
 
 ### メソッド
 
-- `void addListener(VoidCallback listener)`：入力内容の変更を監視を追加
+- `void addListener(VoidCallback listener)`：監視を追加
 - `void removeListener(VoidCallback listener)`：監視を削除
 - `void clear()`：入力内容を空にする
 
@@ -147,12 +147,162 @@
 
 ## BorderRadius
 
-- `BorderRadius.circular(value)`：全角を均等に丸める
-- `BorderRadius.all(Radius.circular(value))`：全角を均等に丸める
-- `BorderRadius.only(topLeft: Radius.circular(value), bottomRight(value))`：特定の角だけ丸める
-- `BorderRadius.vertical(top: Radius.circular(value))`：上だけ角丸
-- `BorderRadius.horizontal(left: circular(value))`：左だけ角丸
+- 全角：`BorderRadius.circular(value)`
+- 全角：`BorderRadius.all(Radius.circular(value))`
+- 個別指定：`BorderRadius.only(topLeft: Radius.circular(value), bottomRight(value))`
+- 上／下だけ：`BorderRadius.vertical(top: Radius.circular(value))`/`BorderRadius.vertical(bottom: Radius.circular(value))`
+- 左／右だけ：`BorderRadius.horizontal(left: circular(value))`/`BorderRadius.horizontal(right: circular(value))`
+
+<br>
+
+### 参照
+
+- [`Radius`](#radius)
 
 ## Border
 
-- 
+- 全辺：`Border.all(color: Colors.black)`
+  - [`Color`](#color) `color`
+  - `double` `width`
+  - [`BorderStyle`](#borderstyle) `style`
+- 縦／横：`Border.symmetric(vertical: BorderSide(color: Colors.red), horizontal: BorderSide(color: Colors.blue),)`
+- 個別指定：`Border(left: BorderSide(color: Colors.green),right: BorderSide(color: Colors.red),)`
+
+### 参照
+
+- [`BorderSide`](#borderside)
+
+## BorderSide
+
+### プロパティ
+
+- [`Color`](#color) `color`
+- `double` `width`
+- [`BorderStyle`](#borderstyle) `style`
+
+## BoxShadow
+
+### プロパティ
+
+- [`Color`](#color) `color`
+- `double` `blueRadius`
+- [`Offset`](#offset) `offset(dx, dy)`
+
+## Gradient
+
+線形・放射状グラデーションを指定
+
+### プロパティ
+
+- [`[Color, Color, ...]`](#color) `colors`
+- [`Alignment`](#alignment) `begin`
+- [`Alignment`](#alignment) `end`
+
+## ShapeBorder
+
+### サブクラス
+
+- `RoundedRectangleBorder`：角丸長方形
+- `CircleBorder`：円形
+- `StadiumBorder`：両端が丸いカプセル型
+
+### プロパティ
+
+- [`BorderRadius`](#borderradius) `borderRadius`
+- [`BorderSide`](#borderside) `side`
+
+# enum系
+
+## MainAxisAlignment
+
+主軸方向のWidgetの配置
+
+<br>
+
+- `MainAxisAlignment.center`：中央揃え
+- `MainAxisAlignment.start`：軸の先頭に寄せる
+- `MainAxisAlignment.end`：軸の末尾に寄せる
+- `MainAxisAlignment.spaceBetween`：両端を揃え、均等配置
+- `MainAxisAlignment.spaceAround`：均等配置（両端に半分の余白）
+- `MainAxisAlignment.spaceEvenly`：完全な均等配置
+
+## CrossAxisAlignment
+
+交差軸方向のWidgetの配置
+
+<br>
+
+- `CrossAxisAlignment.center`：中央揃え
+- `CrossAxisAlignment.start`：軸の先頭に寄せる
+- `CrossAxisAlignment.end`：軸の末尾に寄せる
+- `CrossAxisAlignment.stretch`：最大幅／高さまで伸ばす
+- `CrossAxisAlignment.baseline`：テキストのベースラインに揃える（`Row`限定）
+
+## TextDirection
+
+テキストの横並びの方向
+
+<br>
+
+- `TextDirection.ltr`：Left to Right（左から右）
+- `TextDirection.rtl`：Right to Left（右から左）
+
+## FlexFit
+
+サイズの埋め方
+
+<br>
+
+- `FlexFit.tight`：できるだけ埋める
+- `FlexFit.loose`：子の最小サイズで留める
+
+## StackFit
+
+- `StackFit.loose`：子のサイズを優先し、親のサイズは制約しない
+- `StackFit.expand`：子のサイズを親のサイズいっぱいに広げる
+- `StackFit.passthrough`：親のサイズ制御なしで、子のサイズそのままにする
+
+## Clip
+
+はみ出しのクリップ方法
+
+<br>
+
+- `Clip.none`：はみ出しても切らない
+- `Clip.hardEdge`：はみ出し部分をカット（パフォーマンス重視）
+- `ClipantiAlias`：アンチエイリアス付きでカット（見た目重視）
+- `Clip.antiAliasWithSaveLayer`：保存レイヤー付きでカット（重いが高品質）
+
+## Axis
+
+- `Axis.vertical`：縦方向スクロール
+- `Axis.horizontal`：横方向スクロール
+
+## ScrollPhysics
+
+### サブクラス
+
+- `BouncingScrollPhysics()`：iOS風のバウンス
+- `ClampingScrollPhysics()`：Android風のストップ
+- `NeverScrollableScrollPhysics()`：スクロール禁止
+
+## TextInputType
+
+入力タイプ
+
+<br>
+
+- `TextInputType.text`：通常の文字
+- `TextInputType.number`：数字入力
+- `TextInputType.emailAddress`：メール用キーボード
+- `TextInputType.phone`：電話番号入力
+
+## BlendMode
+
+- `BlendMode.multiply`：元の色*上塗りの色（暗くなることが多い）
+- `BlendMode.overlay`：乗算+スクリーン合成（コントラストが強くなる）
+
+## ImageRepeat
+
+- `ImageRepeat.repeat`
+- `ImageRepeat.noRepeat`
