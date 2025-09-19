@@ -46,7 +46,7 @@
 - [ProxyWidget](#proxywidget)
   - [InheritedWidget](#inheritedwidget)
   - [ParentDataWidget](#parentdatawidget)
-- [PrefferedSizeWidget](#prefferedsizewidget)
+- [preferredSizeWidget](#preferredsizewidget)
   - [AppBar(inplements)](#appbarinplements)
 - [その他のクラス](#その他のクラス)
   - [Navigator](#navigator)
@@ -586,7 +586,7 @@
 
 ## ParentDataWidget
 
-# PrefferedSizeWidget
+# preferredSizeWidget
 
 ## AppBar(inplements)
 
