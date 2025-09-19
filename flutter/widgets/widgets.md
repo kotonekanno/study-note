@@ -1,5 +1,6 @@
+<details>
 <summary>目次</summary>
-<details></details>
+</details>
 
 # Stateless Widget
 
@@ -288,7 +289,7 @@
 
 ## ListView
 
-- 子を縦／横にスクロール可能なリストとして表示
+- 子Widgetを縦／横にスクロール可能なリストとして表示
 
 ### プロパティ
 
@@ -312,7 +313,7 @@
 
 ## SingleChildrenScrollView
 
-- 子が親のサイズを超える場合にスクロールさせる
+- 子Widgetが親Widgetのサイズを超える場合にスクロールさせる
 
 ### プロパティ
 
@@ -334,7 +335,7 @@
 ## Container
 
 - サイズ、余白、色、枠線、角丸、影などを付けられる箱
-- 子を1つだけ内包できる
+- 子Widgetを1つだけ内包できる
 
 ### プロパティ
 
@@ -343,7 +344,7 @@
 - [`EdgeInsets`](#edgeinsets) `padding`/`margin`
 - [`Color`](#color) `color`：背景色
 - [`BoxDecoration`](#boxdecoration) `decoration`：装飾全般
-- [`Alignment`](#alignment) `alignment`：子の配置
+- [`Alignment`](#alignment) `alignment`：子Widgetの配置
 
 <br>
 
@@ -352,7 +353,7 @@
 
 ## Padding
 
-- 子に内側余白をつける
+- 子Widgetに内側余白をつける
 - `Container`の`padding`より軽量
 
 ### プロパティ
@@ -362,14 +363,14 @@
 
 ## Center
 
-- 子を親の中央に配置する
+- 子Widgetを親Widgetの中央に配置する
 - `Row`/`Column`内または単独で使える
 
 ### プロパティ
 
 - `Widget` `child`
-- `double` `WidthFactor`：親の幅に対する拡大率
-- `double` `heightFactor`：親の高さに対する拡大率
+- `double` `WidthFactor`：親Widgetの幅に対する拡大率
+- `double` `heightFactor`：親Widgetの高さに対する拡大率
 
 ## Align
 
@@ -377,13 +378,13 @@
 
 ### プロパティ
 
-- [`AlignmentGeometry`] `alignment`：子の並べ方
+- [`AlignmentGeometry`] `alignment`：子Widgetの並べ方
 - `Widget` `child`
-- `double` `WidthFactor`：子に対する幅の比率
+- `double` `WidthFactor`：子Widgetに対する幅の比率
 
 ## SizedBox
 
-- 固定サイズの空間を作る、または子のサイズを固定
+- 固定サイズの空間を作る、または子Widgetのサイズを固定
 - 縦横のスペーサーとしても使う
 
 ### プロパティ
@@ -395,12 +396,12 @@
 ## Expanded
 
 - `Row`/`Column`内でこの幅や高さを柔軟に調整
-- 親の空間を可能な限り埋める
+- 親Widgetの空間を可能な限り埋める
 - 参照：[`Flexible`](#flexible)
 
 ### プロパティ
 
-- `int` `flex`：親の空間を分ける比率を指定
+- `int` `flex`：親Widgetの空間を分ける比率を指定
 - [`FlexFit`](#flexfit) `fit`：常に`FlexFit.tight`
 - `Widget` `child`
 
@@ -412,13 +413,13 @@
 
 ### プロパティ
 
-- `int` `flex`：親の空間を分ける比率を指定
+- `int` `flex`：親Widgetの空間を分ける比率を指定
 - [`FlexFit`](#flexfit) `fit`：サイズの埋め方
 - `Widget` `child`
 
 ## Positioned
 
-- `Stack`内で絶対位置に子を配置する
+- `Stack`内で絶対位置に子Widgetを配置する
 - `Stack`とセットで使うことが前提
 
 ### プロパティ
@@ -475,7 +476,7 @@
 
 ## Stack
 
-- 子を重ねて表示する
+- 子Widgetを重ねて表示する
 - 上下関係や重なり順を制御する
 
 ### プロパティ
@@ -601,7 +602,7 @@
 ## BoxFit
 
 - `BoxFit.cover`：親Widgetを埋めるように切り取り
-- `BoxFit.contain`：親Wifget内に収まるように縮小
+- `BoxFit.contain`：親Widget内に収まるように縮小
 - `BoxFit.fill`：親Widgetに引き延ばす
 - `BoxFit.fitWidth`/`BoxFit.fitHeight`：親Widhetの幅／高さに揃える
 
@@ -778,13 +779,13 @@
 <br>
 
 - `FlexFit.tight`：できるだけ埋める
-- `FlexFit.loose`：子の最小サイズで留める
+- `FlexFit.loose`：子Widgetの最小サイズで留める
 
 ## StackFit
 
-- `StackFit.loose`：子のサイズを優先し、親のサイズは制約しない
-- `StackFit.expand`：子のサイズを親のサイズいっぱいに広げる
-- `StackFit.passthrough`：親のサイズ制御なしで、子のサイズそのままにする
+- `StackFit.loose`：子Widgetのサイズを優先し、親Widgetのサイズは制約しない
+- `StackFit.expand`：子Widgetのサイズを親Widgetのサイズいっぱいに広げる
+- `StackFit.passthrough`：親Widgetのサイズ制御なしで、子Widgetのサイズそのままにする
 
 ## Clip
 
