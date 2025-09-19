@@ -1,6 +1,6 @@
 # パッケージ
 
-### 目次
+#### 目次
 
 ## `go_router`
 
@@ -8,7 +8,7 @@
 - URLベースでルーティングできる（Flutter Web対応）
 - ルートごとに画面、パラメータ、認証チェックなどをまとめて定義できる
 
-### 基本構文
+#### 基本構文
 
 ```dart
 import 'package:flutter/material.dart';
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
 - `state.params`：URLパラメータの取得
 - `MaterialApp.router`：アプリ側で使う
 
-### 画面遷移操作
+#### 画面遷移操作
 
 - `go()`：プログラムから指定パスに遷移
   ```dart
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
   context.pop(); // Navigator.pop() と同じ
   ```
 
-### 参照
+#### 参照
 
 - [Navigator](widgets.md#navigator)
 
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
 - クライアントとサーバーが双方向でリアルタイムに通信できる
 - HTTPと異なり、常に接続を維持してデータの送受信ができる
 
-### 基本構文
+#### 基本構文
 
 ```dart
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -119,7 +119,7 @@ void main() {
 
 ## `http`
 
-### HTTPとは
+#### HTTPとは
 
 - クライアント（Flutterアプリ）からサーバー（API）にリクエストを送り、サーバーが結果をレスポンスする
 - HTTPメソッド
@@ -134,7 +134,7 @@ void main() {
   - `404`：存在しないページ
   - `500`：サーバー側のエラー
 
-### Dartの非同期処理
+#### Dartの非同期処理
 
 - Dartは非同期（`Future`ベースで動く）
 - `Future`と`async`/`await`を使ってレスポンスを待つ
@@ -157,7 +157,7 @@ void main() async {
 - `await`：レスポンスが返ってくるまで待つ
 - `Future`：あとで値が返ってくる
 
-### GET通信
+#### GET通信
 
 ```dart
 final url = Uri.parse('https://jsonplaceholder.typicode.com/todos/1');
@@ -179,7 +179,7 @@ if (response.statusCode == 200) {
 - 成功ならJSON文字列が返ってくる
 - エラーならステータスコードを見て原因を判断
 
-### POST通信
+#### POST通信
 
 - サーバーにデータを送る
 
@@ -203,7 +203,7 @@ print(response.body);
   - JSONの場合：`Content-type: application/json`
 - `body`：送るデータを書き込む（文字列やJSON）
 
-### レスポンス処理（JSONの扱い）
+#### レスポンス処理（JSONの扱い）
 
 - JSON文字列をDartで使える形に変換
 - `Map`、`List`としてアクセスできる
@@ -213,7 +213,7 @@ print(response.body);
 - SQLを直接書いてクエリを実行できる
 - 非同期処理に対応している
 
-### 基本構文
+#### 基本構文
 
 ```dart
 import 'package:mysql1/mysql1.dart';
@@ -249,7 +249,7 @@ void main() async {
   - 非同期なので、`await`で待つ必要がある
 - 接続終了：`conn.close()`
 
-### その他
+#### その他
 
 - `?`プレースホルダー：配列で値を渡す
 - パラメータのバインド
@@ -259,7 +259,7 @@ void main() async {
 - 端末の外部アプリやブラウザを開く
 - 電話、メール、ブラウザ、マップなどを起動できる
 
-### 基本構文
+#### 基本構文
 
 ```dart
 import 'package:url_launcher/url_launcher.dart';
@@ -279,7 +279,7 @@ Future<void> openFlutterSite() async {
 - `launchUrl(url)`：指定されたURLを開く
 - `canLaunchUrl`：失敗時の処理を書くことができる
 
-### `LaunchMode`
+#### `LaunchMode`
 
 - `LaunchMode.platformDefault`：OSが標準で決めた方法で開く（デフォルト）
 - `LaunchMode.externalApplication`：端末の外部ブラウザやアプリで開く
@@ -308,7 +308,7 @@ await launchUrl(
 - タイムアウト、エラー処理、リクエストの共通ヘッダー設定などが用意
 - Cookie管理、インターセプター（リクエスト・レスポンスの前後に処理を挟む）に対応
 
-### 基本構文
+#### 基本構文
 
 ```dart
 import 'package:dio/dio.dart';
@@ -330,7 +330,7 @@ void main() async {
 - `responce.data`：JSONを自動で`Map`/`Array`に変換
 - `try`/`catch`でエラーを拾う
 
-### リクエスト設定
+#### リクエスト設定
 
 - ヘッダー設定（`Authorization`、`Content-Type`など）
   ```dart
@@ -359,7 +359,7 @@ void main() async {
   }
   ```
 
-### タイムアウト／エラー処理
+#### タイムアウト／エラー処理
 
 ```dart
 dio.options.connectTimeout = 5000; // 接続タイムアウト5秒
@@ -381,7 +381,7 @@ try {
 - `DioErrorType`：エラーの種類を判定
 - `http`では単に例外で止まるが、`dio`では細かく種類を分けられる
 
-### Cookie/共通ヘッダー／インターセプター
+#### Cookie/共通ヘッダー／インターセプター
 
 - Cookie管理や共通ヘッダーをまとめて設定可能
 - `Interceptor`でリクエスト前後に自動処理を挟める
@@ -406,7 +406,7 @@ dio.interceptors.add(InterceptorsWrapper(
 - プラットフォームごとに異なるファイル保存場所（ドキュメントディレクトリや一時ディレクトリなど）を簡単に取得できる
 - ファイルの読み書きやデータ保存の前に必須
 
-### 基本構文
+#### 基本構文
 
 ```dart
 import 'package:path_provider/path_provider.dart';

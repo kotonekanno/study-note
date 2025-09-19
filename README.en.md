@@ -28,7 +28,8 @@ Published mainly for my own reference and record keeping.
   - [**Play Framework**](scala/playframework/): A framework for easily buliding web applications in Scala
   - [**Akka**](scala/akka/): A library for handling concurrency and asynchronous processing
 - [**SQL**](sql/): A language for querying and manipulating databases
-- I have also studied Java, Python, and C at school (they are not yet documented in this repository).
+- [**Flutter**](flutter/): A UI framework to build apps for iOS, Android, web, and desktop
+- I have also studied Java, Python, and C
 
 
 ## Directory Structure
@@ -45,5 +46,6 @@ study-note
 │   └── playframework/ # PlayFramework
 │   └── akka/          # Akka
 ├── sql/                # SQL
+├── flutter/            # Flutter
 └── README.md
 ```

@@ -27,7 +27,8 @@ Github Pagesで見る：https://kotonekanno.github.io/study-note/
   - [**Play Framework**](scala/playframework/)：ScalaでWebアプリを簡単に作るためのフレームワーク
   - [**Akka**](scala/akka/)：並行処理や非同期処理を簡単に扱うためのライブラリ
 - [**SQL**](sql/)：データベースから情報を取得・操作するための言語
-- 他にJava、Python、C言語を学校で学習しています（このリポジトリにはまだまとめていません）
+- [**Flutter**](flutter/)：iOS・Android・Web・デスクトップ向けのアプリを作れるUIフレームワーク
+- 他にJava、Python、C言語を学習済み
 
 
 ## ディレクトリ構成
@@ -44,5 +45,6 @@ study-note
 │   └── playframework/ # PlayFramework
 │   └── akka/          # Akka
 ├── sql/                # SQL
+├── flutter/            # Flutter
 └── README.md
 ```
