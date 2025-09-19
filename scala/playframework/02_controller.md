@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # 2. Controller
 
 - リクエストを受けて処理の流れを制御する  

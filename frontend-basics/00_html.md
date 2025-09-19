@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # HTML
 
 ### 目次

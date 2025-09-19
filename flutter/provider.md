@@ -1,6 +1,23 @@
+<!-- omit in toc -->
 # Provider
 
-#### 目次
+### 目次
+
+- [`ChangeNotifier`](#changenotifier)
+- [Provider系クラス](#provider系クラス)
+  - [`Provider<T>`](#providert)
+  - [`ChangeNotifierProvider<T extends ChangeNotifier>`](#changenotifierprovidert-extends-changenotifier)
+  - [`MultiProvider`](#multiprovider)
+- [データの取得](#データの取得)
+  - [`Provider.of<T>(context, {listen = true})`](#provideroftcontext-listen--true)
+  - [`context.read<T>()`](#contextreadt)
+  - [`context.watch<T>`](#contextwatcht)
+  - [`context.select<T, R>(R selector(T value))`](#contextselectt-rr-selectort-value)
+- [Widgetでの監視（画面更新）](#widgetでの監視画面更新)
+  - [`Selector<T, R>`](#selectort-r)
+  - [`Consumer<T>`](#consumert)
+- [サンプルコード](#サンプルコード)
+- [流れまとめ](#流れまとめ)
 
 ## `ChangeNotifier`
 
@@ -34,7 +51,7 @@ class AuctionViewModel extends ChangeNotifier {
 
 ## Provider系クラス
 
-#### `Provider<T>`
+### `Provider<T>`
 
 - 下位Widgetにオブジェクトを提供する
 - 上位にオブジェクトを置いて、下位のWidgetから`Provider.of<T>(context)`で取り出せるようにする箱
@@ -47,7 +64,7 @@ Provider<T>(
 )
 ```
 
-#### `ChangeNotifierProvider<T extends ChangeNotifier>`
+### `ChangeNotifierProvider<T extends ChangeNotifier>`
 
 - `ChangeNotifier`を継承したクラスを提供し、変更通知に対応
 - オブジェクトを流し、そのオブジェクトの状態が変化したら通知して、画面を再ビルドする
@@ -60,7 +77,7 @@ ChangeNotifierProvider<T>(
 )
 ```
 
-#### `MultiProvider`
+### `MultiProvider`
 
 - `Provider`を複数まとめて登録
 
@@ -76,7 +93,7 @@ MultiProvider(
 
 ## データの取得
 
-#### `Provider.of<T>(context, {listen = true})`
+### `Provider.of<T>(context, {listen = true})`
 
 - 登録された`T`を取得する
 - 戻り値：`T`型のインスタンス
@@ -89,20 +106,20 @@ Provider.of<T>(context, listen: true/false)
   - `true`：値が変わるとこのWidgetも再ビルドされる
   - `false`：単発で値を参照するのみ
 
-#### `context.read<T>()`
+### `context.read<T>()`
 
 - `listen`しないで値を取得する
 - 戻り値：`T`型のインスタンス
 - `Provider.of<T>(context, listen: false)`の糖衣構文
 
-#### `context.watch<T>`
+### `context.watch<T>`
 
 - `listen`する値を取得する
 - 戻り値：`T`型のインスタンス
 - `Provider.of<T>(context, listen: true)`の糖衣構文
 - `T`全体を監視するため、`T`内のどのフィールドが変わっても再ビルドされる
 
-#### `context.select<T, R>(R selector(T value))`
+### `context.select<T, R>(R selector(T value))`
 
 - 特定のフィールドだけ監視する
 - 戻り値：`R`型（特定の値）
@@ -120,7 +137,7 @@ context.select<T, R>(
 
 ## Widgetでの監視（画面更新）
 
-#### `Selector<T, R>`
+### `Selector<T, R>`
 
 - `Consumer`と`select`の組み合わせ
 - 特定のWidgetに特定のフィールドを`listen`させる
@@ -134,7 +151,7 @@ Selector<T, R>(
 )
 ```
 
-#### `Consumer<T>`
+### `Consumer<T>`
 
 - 特定のWidgetだけを`listen`させる
 - Widget全体ではなく一部だけ再ビルド可能

@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # 1. 変数
 
 ### 目次
@@ -5,7 +6,11 @@
 - [変数定義](#変数定義)
 - [型推論](#型推論)
 - [Scalaのデータ型](#scalaのデータ型)
-- [文字列補完（String Interpolation）](#文字列補完string-interpolation)
+- [数値](#数値)
+  - [Scala標準ライブラリ（数値）](#scala標準ライブラリ数値)
+- [文字列](#文字列)
+  - [文字列補完（String Interpolation）](#文字列補完string-interpolation)
+  - [Scala標準ライブラリ（文字列）](#scala標準ライブラリ文字列)
 
 <br>
 

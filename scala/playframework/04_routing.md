@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # 4. Routing
 
 `conf/routes`ファイルで「どのURLに対してどのControllerのどのメソッドを呼ぶか」を定義

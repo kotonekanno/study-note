@@ -1,6 +1,17 @@
-# パッケージ
+<!-- omit in toc -->
+# ライブラリ
 
-#### 目次
+### 目次
+
+- [`go_router`](#go_router)
+- [web\_socket\_channel](#web_socket_channel)
+- [`provider`](#provider)
+- [`http`](#http)
+- [`mysql1`](#mysql1)
+- [`url_launcher`](#url_launcher)
+- [`url_launcher_web`](#url_launcher_web)
+- [`dio`](#dio)
+- [`path_provider`](#path_provider)
 
 ## `go_router`
 

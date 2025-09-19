@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # jQuery
 
 ### 目次

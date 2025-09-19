@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # Study Note
 
 Github Pagesで見る：https://kotonekanno.github.io/study-note/
