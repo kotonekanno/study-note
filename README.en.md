@@ -29,7 +29,9 @@ Published mainly for my own reference and record keeping.
   - [**Play Framework**](scala/playframework/): A framework for easily buliding web applications in Scala
   - [**Akka**](scala/akka/): A library for handling concurrency and asynchronous processing
 - [**SQL**](sql/): A language for querying and manipulating databases
-- [**Flutter**](flutter/): A UI framework to build apps for iOS, Android, web, and desktop
+- [**Dart and related**](dart/)
+  - [**Dart**](dart/): A language developed by google
+  - [**Flutter**](dart/flutter/): A UI framework written in Dart to build apps for iOS, Android, web, and desktop
 - I have also studied Java, Python, and C
 
 
