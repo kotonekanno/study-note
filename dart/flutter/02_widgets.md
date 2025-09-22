@@ -205,7 +205,7 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 #### プロパティ
 
 - Widget child
-- [`Color`] `color`：背景色
+- [`Color`](#color) `color`：背景色
 - `double` `elevation`：影の高さ
 - [`ShapeBorder`](#shapeborder) `shape`：枠の形状
 - [`BorderRadius`](#borderradius) `borderRadius`：角丸の半径

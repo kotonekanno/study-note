@@ -18,7 +18,7 @@
 ## リンク
 
 1. [Flutterアプリの基礎](01_basic.md)
-2. [Widget／クラス](02_02_widgets.md)
+2. [Widget／クラス](02_widgets.md)
 
 ## 階層構造
 
