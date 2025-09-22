@@ -29,7 +29,8 @@ Github Pagesで見る：https://kotonekanno.github.io/study-note/
   - [**Akka**](scala/akka/)：並行処理や非同期処理を簡単に扱うためのライブラリ
 - [**SQL**](sql/)：データベースから情報を取得・操作するための言語
 - [**Dart関連技術**](dart/)
-  - [**Dart**](dart/)：Googleが開発したプログラミング言語
+  - [**Dart**](dart/basics/)：Googleが開発したプログラミング言語
+  - [パッケージ](dart/packages)
   - [**Flutter**](dart/flutter/)：Dartを使用した、iOS・Android・Web・デスクトップ向けのアプリを作れるUIフレームワーク
 - 他にJava、Python、C言語を学習済み
 
@@ -40,14 +41,17 @@ Github Pagesで見る：https://kotonekanno.github.io/study-note/
 study-note
 ├── frontend-basics/    # HTML/CSS
 ├── javascript/
-│   └── basics/        # JavaScript
-│   └── coffeescript/  # CoffeeScript
-│   └── jquery/        # JQuery
+│   └── basics/         # JavaScript
+│   └── coffeescript/   # CoffeeScript
+│   └── jquery/         # JQuery
 ├── scala/
-│   └── basics/        # Scala
-│   └── playframework/ # PlayFramework
-│   └── akka/          # Akka
+│   └── basics/         # Scala
+│   └── playframework/  # PlayFramework
+│   └── akka/           # Akka
 ├── sql/                # SQL
-├── flutter/            # Flutter
+├── dart/
+│   └── basics/         # Dart
+│   └── packages/       # パッケージ
+│   └── flutter/        # Flutter
 └── README.md
 ```

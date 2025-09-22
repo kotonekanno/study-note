@@ -77,7 +77,7 @@ class MyApp extends StatelessWidget {
 
 #### 参照
 
-- [Navigator](widgets.md#navigator)
+- [Navigator](02_widgets.md#navigator)
 
 ## web_socket_channel
 

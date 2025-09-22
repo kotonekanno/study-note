@@ -30,7 +30,8 @@ Published mainly for my own reference and record keeping.
   - [**Akka**](scala/akka/): A library for handling concurrency and asynchronous processing
 - [**SQL**](sql/): A language for querying and manipulating databases
 - [**Dart and related**](dart/)
-  - [**Dart**](dart/): A language developed by google
+  - [**Dart**](dart/basics/): A language developed by google
+  - [Packages](dart/packages/)
   - [**Flutter**](dart/flutter/): A UI framework written in Dart to build apps for iOS, Android, web, and desktop
 - I have also studied Java, Python, and C
 
@@ -41,14 +42,17 @@ Published mainly for my own reference and record keeping.
 study-note
 ├── frontend-basics/    # HTML/CSS
 ├── javascript/
-│   └── basics/        # JavaScript
-│   └── coffeescript/  # CoffeeScript
-│   └── jquery/        # JQuery
+│   └── basics/         # JavaScript
+│   └── coffeescript/   # CoffeeScript
+│   └── jquery/         # JQuery
 ├── scala/
-│   └── basics/        # Scala
-│   └── playframework/ # PlayFramework
-│   └── akka/          # Akka
+│   └── basics/         # Scala
+│   └── playframework/  # PlayFramework
+│   └── akka/           # Akka
 ├── sql/                # SQL
-├── flutter/            # Flutter
+├── dart/
+│   └── basics/         # Dart
+│   └── packages/
+│   └── flutter/        # Flutter
 └── README.md
 ```
