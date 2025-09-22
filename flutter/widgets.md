@@ -1,93 +1,156 @@
 <details>
 <summary>目次</summary>
 
-- [StatelessWidget](#statelesswidget)
-  - [Text](#text)
-  - [Icon](#icon)
-  - [Card](#card)
-  - [Material](#material)
-  - [Divider](#divider)
-  - [CircleAvatar](#circleavatar)
-  - [Tooltip](#tooltip)
-  - [FloatingActionButton](#floatingactionbutton)
-  - [ElevatedButton](#elevatedbutton)
-  - [TextButton](#textbutton)
-  - [IconButton](#iconbutton)
-  - [ListTile](#listtile)
-- [StatefulWidget](#statefulwidget)
-  - [Scaffold](#scaffold)
-  - [AppBar](#appbar)
-  - [BottomNavigationBar](#bottomnavigationbar)
-  - [Form](#form)
-  - [TextField](#textfield)
-  - [TextFormField](#textformfield)
-  - [CheckBox](#checkbox)
-  - [Switch](#switch)
-  - [Radio](#radio)
-  - [ListView](#listview)
-  - [GridView](#gridview)
-  - [SingleChildrenScrollView](#singlechildrenscrollview)
-  - [ValueListenableBuilder](#valuelistenablebuilder)
-- [RenderObjectWidget/SingleRenderObjectWidget](#renderobjectwidgetsinglerenderobjectwidget)
-  - [Container](#container)
-  - [Padding](#padding)
-  - [Center](#center)
-  - [Align](#align)
-  - [SizedBox](#sizedbox)
-  - [Expanded](#expanded)
-  - [Flexible](#flexible)
-  - [Positioned](#positioned)
-  - [Visibility](#visibility)
-- [RenderObjectWidget/MultiChildRenderOvjectWidget](#renderobjectwidgetmultichildrenderovjectwidget)
-  - [Row](#row)
-  - [Column](#column)
-  - [Stack](#stack)
-  - [Spacer](#spacer)
-- [ProxyWidget](#proxywidget)
-  - [InheritedWidget](#inheritedwidget)
-  - [ParentDataWidget](#parentdatawidget)
-- [preferredSizeWidget](#preferredsizewidget)
-  - [AppBar(inplements)](#appbarinplements)
+- [`StatelessWidget`](#statelesswidget)
+  - [`Text`](#text)
+      - [プロパティ](#プロパティ)
+  - [`Icon`](#icon)
+      - [プロパティ](#プロパティ-1)
+  - [`Card`](#card)
+      - [プロパティ](#プロパティ-2)
+  - [`Material`](#material)
+      - [プロパティ](#プロパティ-3)
+  - [`Divider`](#divider)
+      - [プロパティ](#プロパティ-4)
+  - [`CircleAvatar`](#circleavatar)
+      - [プロパティ](#プロパティ-5)
+  - [`Tooltip`](#tooltip)
+      - [プロパティ](#プロパティ-6)
+  - [`FloatingActionButton`](#floatingactionbutton)
+      - [プロパティ](#プロパティ-7)
+  - [`ElevatedButton`](#elevatedbutton)
+      - [プロパティ](#プロパティ-8)
+  - [`TextButton`](#textbutton)
+      - [プロパティ](#プロパティ-9)
+  - [`IconButton`](#iconbutton)
+      - [プロパティ](#プロパティ-10)
+  - [`ListTile`](#listtile)
+      - [プロパティ](#プロパティ-11)
+- [`StatefulWidget`](#statefulwidget)
+  - [`Scaffold`](#scaffold)
+      - [プロパティ](#プロパティ-12)
+  - [`AppBar`](#appbar)
+      - [プロパティ](#プロパティ-13)
+  - [`BottomNavigationBar`](#bottomnavigationbar)
+      - [プロパティ](#プロパティ-14)
+  - [`Form`](#form)
+      - [プロパティ](#プロパティ-15)
+  - [`TextField`](#textfield)
+      - [プロパティ](#プロパティ-16)
+  - [`TextFormField`](#textformfield)
+      - [プロパティ](#プロパティ-17)
+  - [`CheckBox`](#checkbox)
+      - [プロパティ](#プロパティ-18)
+  - [`Switch`](#switch)
+      - [プロパティ](#プロパティ-19)
+  - [`Radio<T>`](#radiot)
+      - [プロパティ](#プロパティ-20)
+  - [`ListView`](#listview)
+      - [プロパティ](#プロパティ-21)
+  - [`GridView`](#gridview)
+      - [プロパティ](#プロパティ-22)
+  - [`SingleChildrenScrollView`](#singlechildrenscrollview)
+      - [プロパティ](#プロパティ-23)
+  - [`ValueListenableBuilder<T>`](#valuelistenablebuildert)
+- [`RenderObjectWidget /SingleRenderObjectWidget`](#renderobjectwidget-singlerenderobjectwidget)
+  - [`Container`](#container)
+      - [プロパティ](#プロパティ-24)
+  - [`Padding`](#padding)
+      - [プロパティ](#プロパティ-25)
+  - [`Center`](#center)
+      - [プロパティ](#プロパティ-26)
+  - [`Align`](#align)
+      - [プロパティ](#プロパティ-27)
+  - [`SizedBox`](#sizedbox)
+      - [プロパティ](#プロパティ-28)
+  - [`Expanded`](#expanded)
+      - [プロパティ](#プロパティ-29)
+  - [`Flexible`](#flexible)
+      - [プロパティ](#プロパティ-30)
+  - [`Positioned`](#positioned)
+      - [プロパティ](#プロパティ-31)
+  - [`Visibility`](#visibility)
+      - [プロパティ](#プロパティ-32)
+- [`RenderObjectWidget /MultiChildRenderOvjectWidget`](#renderobjectwidget-multichildrenderovjectwidget)
+  - [`Row`](#row)
+      - [プロパティ](#プロパティ-33)
+  - [`Column`](#column)
+      - [プロパティ](#プロパティ-34)
+  - [`Stack`](#stack)
+      - [プロパティ](#プロパティ-35)
+  - [`Spacer`](#spacer)
+      - [プロパティ](#プロパティ-36)
+- [`ProxyWidget`](#proxywidget)
+  - [`InheritedWidget`](#inheritedwidget)
+  - [`ParentDataWidget`](#parentdatawidget)
+- [`PreferredSizeWidget`](#preferredsizewidget)
+  - [`AppBar`(`inplements`)](#appbarinplements)
 - [その他のクラス](#その他のクラス)
-  - [Navigator](#navigator)
-  - [GestureDetector](#gesturedetector)
-  - [StreamBuilder](#streambuilder)
+  - [`Navigator`](#navigator)
+      - [プロパティ](#プロパティ-37)
+  - [`GestureDetector`](#gesturedetector)
+      - [プロパティ](#プロパティ-38)
+      - [参照](#参照)
+  - [`StreamBuilder`](#streambuilder)
+      - [プロパティ](#プロパティ-39)
 - [非Widgetクラス](#非widgetクラス)
-  - [ImageProvider](#imageprovider)
-  - [EdgeInsets](#edgeinsets)
-  - [Color](#color)
-  - [Alignment](#alignment)
-  - [BoxFit](#boxfit)
-  - [BoxDecoration](#boxdecoration)
-  - [TextStyle](#textstyle)
-  - [TextEditingController](#texteditingcontroller)
-  - [TextSelection](#textselection)
-  - [Duration](#duration)
-  - [BorderRadius](#borderradius)
-  - [Border](#border)
-  - [BorderSide](#borderside)
-  - [BoxShadow](#boxshadow)
-  - [Gradient](#gradient)
-  - [ShapeBorder](#shapeborder)
+  - [`ImageProvider`](#imageprovider)
+      - [サブクラス](#サブクラス)
+  - [`EdgeInsets`](#edgeinsets)
+  - [`Color`](#color)
+  - [`Alignment`](#alignment)
+  - [`BoxFit`](#boxfit)
+  - [`BoxDecoration`](#boxdecoration)
+      - [プロパティ](#プロパティ-40)
+  - [`TextStyle`](#textstyle)
+      - [プロパティ](#プロパティ-41)
+  - [`TextEditingController`](#texteditingcontroller)
+      - [プロパティ](#プロパティ-42)
+      - [メソッド](#メソッド)
+  - [`TextSelection`](#textselection)
+      - [プロパティ](#プロパティ-43)
+  - [`Duration`](#duration)
+      - [プロパティ](#プロパティ-44)
+  - [`BorderRadius`](#borderradius)
+      - [参照](#参照-1)
+  - [`Border`](#border)
+      - [参照](#参照-2)
+  - [`BorderSide`](#borderside)
+      - [プロパティ](#プロパティ-45)
+  - [`BoxShadow`](#boxshadow)
+      - [プロパティ](#プロパティ-46)
+  - [`Gradient`](#gradient)
+      - [プロパティ](#プロパティ-47)
+  - [`ShapeBorder`](#shapeborder)
+      - [サブクラス](#サブクラス-1)
+      - [プロパティ](#プロパティ-48)
 - [enum系](#enum系)
-  - [MainAxisAlignment](#mainaxisalignment)
-  - [CrossAxisAlignment](#crossaxisalignment)
-  - [TextDirection](#textdirection)
-  - [FlexFit](#flexfit)
-  - [StackFit](#stackfit)
-  - [Clip](#clip)
-  - [Axis](#axis)
-  - [ScrollPhysics](#scrollphysics)
-  - [TextInputType](#textinputtype)
-  - [BlendMode](#blendmode)
-  - [ImageRepeat](#imagerepeat)
+  - [`MainAxisAlignment`](#mainaxisalignment)
+  - [`CrossAxisAlignment`](#crossaxisalignment)
+  - [`TextDirection`](#textdirection)
+  - [`FlexFit`](#flexfit)
+  - [`StackFit`](#stackfit)
+  - [`Clip`](#clip)
+  - [`Axis`](#axis)
+  - [`ScrollPhysics`](#scrollphysics)
+      - [サブクラス](#サブクラス-2)
+  - [`TextInputType`](#textinputtype)
+  - [`BlendMode`](#blendmode)
+  - [`ImageRepeat`](#imagerepeat)
 - [Generic系](#generic系)
+  - [`MaterialStateProperty<T>`](#materialstatepropertyt)
+  - [`MaterialState`](#materialstate)
+  - [`ValueListenable<T>`](#valuelistenablet)
+  - [`ValueNotifier<T>`](#valuenotifiert)
+      - [メソッド](#メソッド-1)
+  - [`AsyncSnapshot<T>`](#asyncsnapshott)
+      - [プロパティ](#プロパティ-49)
 
 </details>
 
-# StatelessWidget
+# `StatelessWidget`
 
-## Text
+## `Text`
 
 - 単一スタイルの文字列を表示
 
@@ -105,7 +168,7 @@
   - `1.0`：標準
   - `1.2`：少し大きめ
 
-## Icon
+## `Icon`
 
 - アイコン表示
 - https://api.flutter.dev/flutter/material/Icons-class.html
@@ -117,7 +180,7 @@
 - [`Color`](#color) `color`：アイコンの色
 - `String` `semanticLabel`：アクセシビリティ用の説明テキスト
 
-## Card
+## `Card`
 
 - 完成されたのカードUI
 - 角丸や影がデフォルトで設定されている
@@ -131,7 +194,7 @@
 - [`EdgeInets](#edgeinsets) `margin`
 - [`Clip`](#clip) `clipBehavior`：はみ出しの処理
 
-## Material
+## `Material`
 
 - マテリアルデザインの土台を提供
 - `Card`や`InkWell`の動作に必要
@@ -144,7 +207,7 @@
 - [`ShapeBorder`](#shapeborder) `shape`：枠の形状
 - [`BorderRadius`](#borderradius) `borderRadius`：角丸の半径
 
-## Divider
+## `Divider`
 
 - 水平線で区切る
 - リストやセクションの区切りに使う
@@ -157,7 +220,7 @@
 - `double` `indent`：左側の余白
 - `double` `endIndent`：右側の余白
 
-## CircleAvatar
+## `CircleAvatar`
 
 - 丸い画像や文字の表示用
 - プロフィール写真やユーザーアイコンに使う
@@ -169,7 +232,7 @@
 - [`ImageProvider`](#imageprovider) `backgroundImage`：丸い画像を表示
 - `Widget` `child`：画像がない場合の代替表示（文字、アイコンなど）
 
-## Tooltip
+## `Tooltip`
 
 - マウスホバーや長押しで表示される補助テキストをWidgetに追加
 - ボタンやアイコンの説明に使う
@@ -184,7 +247,7 @@
 - [`Duration`](#duration) `waitDuration`：表示するまでの待機時間
 - [`Duration`](#duration) `showDuration`：表示される時間
 
-## FloatingActionButton
+## `FloatingActionButton`
 
 - 画面上に浮かぶ丸いボタン
 - [`Scaffold`](#scaffold)の`floatingActionButton`プロパティで配置
@@ -200,7 +263,7 @@
 - `bool` `mini`：小さいサイズにするかどうか
 - [`ShapeBorder`](#shapeborder) `shape`：ボタンの形状
 
-## ElevatedButton
+## `ElevatedButton`
 
 - 立体感のあるボタン
 
@@ -210,7 +273,7 @@
 - `Widget` `child`
 - [`ButtonStyle`](#buttonstyle) `style`：ボタンのデザイン
 
-## TextButton
+## `TextButton`
 
 - フラット（影なし）のシンプルなボタン
 
@@ -220,7 +283,7 @@
 - `Widget` `child`
 - [`ButtonStyle`](#buttonstyle) `style`：ボタンのデザイン
 
-## IconButton
+## `IconButton`
 
 - アイコンのみのボタン
 - `AppBar`や`Card`の操作に使う
@@ -233,7 +296,7 @@
 - [`Color`](#color) `color`：アイコンの色
 - `double` `iconSize`：アイコンのサイズ
 
-## ListTile
+## `ListTile`
 
 - 一般的なリストアイテム用
   - 左側：アイコン
@@ -250,9 +313,9 @@
 - `VoidCallback` `onTap`：タップ時の処理
 - `VoidCallback` `onLongPress`：長押し時の処理
 
-# StatefulWidget
+# `StatefulWidget`
 
-## Scaffold
+## `Scaffold`
 
 - 画面の基本レイアウトを提供する土台
 - `AppBar`, `Body`, `ButtonNavigationBar`などをまとめて管理
@@ -265,7 +328,7 @@
 - [`Drawer`](#drawer) `drawer`：横から出てくるメニュー
 - [`Color`](#color) `backgroundColor`：背景色
 
-## AppBar
+## `AppBar`
 
 - 画面上部のタイトルバーを提供
 
@@ -277,7 +340,7 @@
 - `Color`(#color) `backgroundColor`：背景色
 - `double` `elevation`：影の高さ
 
-## BottomNavigationBar
+## `BottomNavigationBar`
 
 - 画面下部のタブ切り替えナビゲーションバー
 
@@ -291,7 +354,7 @@
 - [`Color`](#color) `selectedItemColor`：選択中の色
 - [`Color`](#color) `unselectedItemColor`：非選択の色
 
-## Form
+## `Form`
 
 - 複数の入力フィールドを1つのまとまりとして管理
 - バリデーション（入力チェック）に便利
@@ -301,7 +364,7 @@
 - `Widget` `child`：`Column`や`ListView`で複数配置
 - `GlobalKey<FormState>` `key`：フォーム全体を管理するキー
 
-## TextField
+## `TextField`
 
 - ユーザー空文字入力を受け取る
 - 拡張版：[`TextFormField`](#textformfield)
@@ -316,7 +379,7 @@
 - `bool` `enabled`：入力可否
 - `void Function(String)` `onChanged`：入力内容が変わった時の処理
 
-## TextFormField
+## `TextFormField`
 
 - 入力欄用
 - `TextField`を拡張したフォーム対応版
@@ -332,7 +395,7 @@
 - `String Function(String)` `validator`：バリデーション関数
 - `void Function(String)` `onChanged`：入力内容が変わった時の処理
 
-## CheckBox
+## `CheckBox`
 
 - ユーザーのオン／オフ状態を操作する
 - チェックボックス
@@ -345,7 +408,7 @@
 - [`Color`](#color) `checkColor`：チェックマークの色
 - `bool` `tristate`：`null`状態を許可するか
 
-## Switch
+## `Switch`
 
 - ユーザーのオン／オフ状態を操作する
 - スライド型トグル
@@ -358,7 +421,7 @@
 - [`Color`](#color) `inactiveThumbColor`：オフ時のつまみの色
 - [`Color`](#color) `inactiveTrackColor`：オフ時の背景の色
 
-## Radio<T>
+## `Radio<T>`
 
 - ユーザーの選択状態を操作する
 - ラジオボタン
@@ -370,7 +433,7 @@
 - `void Function<T>` `onChanged`：選択時のコールバック
 - [`Color`](#color) `activeColor`：選択時の色
 
-## ListView
+## `ListView`
 
 - 子Widgetを縦／横にスクロール可能なリストとして表示
 
@@ -383,7 +446,7 @@
 - `bool` `shrinkWrap`：`true`でこのサイズに合わせてリストサイズを縮小
 - [`ScrollPhysics`](#scrollphysics) `physics`：スクロールの動き方を制御
 
-## GridView
+## `GridView`
 
 - 縦横にグリッド表示するスクロール可能なレイアウト
 
@@ -394,7 +457,7 @@
 - [`Axis`](#axis) `scrollDirection`：スクロールの方向
 - [`EdgeInsetsGeometry`](#edgeinsetsgeometry) `padding`：グリッド全体の内側余白
 
-## SingleChildrenScrollView
+## `SingleChildrenScrollView`
 
 - 子Widgetが親Widgetのサイズを超える場合にスクロールさせる
 
@@ -407,15 +470,15 @@
 - [`ScrollPhysics`] `physics`：スクロールの動き方を制御
 - [`Clip`](#clip) `clipBehavior`：はみ出し部分の処理
 
-## ValueListenableBuilder<T>
+## `ValueListenableBuilder<T>`
 
-- [`ValueNotifier`](#valuenotifier) `valueListenable`：監視対象のオブジェクト
+- [`ValueNotifier<T>`](#valuenotifiert) `valueListenable`：監視対象のオブジェクト
 - `Widget Function(BuildContext, T, Widget)` `builder`：値が変わった時に再描画するWidgetを返す関数
 - `Widget` `child`：再描画されない固定部分のWidget
 
-# RenderObjectWidget/SingleRenderObjectWidget
+# `RenderObjectWidget /SingleRenderObjectWidget`
 
-## Container
+## `Container`
 
 - サイズ、余白、色、枠線、角丸、影などを付けられる箱
 - 子Widgetを1つだけ内包できる
@@ -434,7 +497,7 @@
 - `color`と`decoration`は同時に使えない
 - `decoration`を使う場合、`color`は`decoration.color`に統合
 
-## Padding
+## `Padding`
 
 - 子Widgetに内側余白をつける
 - `Container`の`padding`より軽量
@@ -444,7 +507,7 @@
 - [`EdgeInsets`](#edgeinsets) `padding`
 - `Widget` `child`
 
-## Center
+## `Center`
 
 - 子Widgetを親Widgetの中央に配置する
 - `Row`/`Column`内または単独で使える
@@ -455,7 +518,7 @@
 - `double` `WidthFactor`：親Widgetの幅に対する拡大率
 - `double` `heightFactor`：親Widgetの高さに対する拡大率
 
-## Align
+## `Align`
 
 - 子を中に並べる
 
@@ -465,7 +528,7 @@
 - `Widget` `child`
 - `double` `WidthFactor`：子Widgetに対する幅の比率
 
-## SizedBox
+## `SizedBox`
 
 - 固定サイズの空間を作る、または子Widgetのサイズを固定
 - 縦横のスペーサーとしても使う
@@ -476,7 +539,7 @@
 - `double` `height`
 - `Widget` `child`
 
-## Expanded
+## `Expanded`
 
 - `Row`/`Column`内でこの幅や高さを柔軟に調整
 - 親Widgetの空間を可能な限り埋める
@@ -488,7 +551,7 @@
 - [`FlexFit`](#flexfit) `fit`：常に`FlexFit.tight`
 - `Widget` `child`
 
-## Flexible
+## `Flexible`
 
 - `Row`/`Column`内でこの幅や高さを柔軟に調整
 - サイズ調整が自由
@@ -500,7 +563,7 @@
 - [`FlexFit`](#flexfit) `fit`：サイズの埋め方
 - `Widget` `child`
 
-## Positioned
+## `Positioned`
 
 - `Stack`内で絶対位置に子Widgetを配置する
 - `Stack`とセットで使うことが前提
@@ -511,7 +574,7 @@
 - `double` `width`/`height`：幅／高さを固定
 - `Widget` `child`
 
-## Visibility
+## `Visibility`
 
 - Widgetの表示・非表示を切り替える
 - レイアウトに残すかどうか制御可能
@@ -526,9 +589,9 @@
 - `bool` `maintainSemantics`：アクセシビリティ情報を保持するか
 - `bool` `maintainInteractivity`：タッチや操作を保持するか
 
-# RenderObjectWidget/MultiChildRenderOvjectWidget
+# `RenderObjectWidget /MultiChildRenderOvjectWidget`
 
-## Row
+## `Row`
 
 - 横方向にWidgetを並べる
 - `mainAxis`：横方向
@@ -543,7 +606,7 @@
 - [`TextDirection`](#textdirection) `textDirection`：横並び方向の制御
 - [`VerticalDirection`](#verticaldirection) `verticalDirection`：
 
-## Column
+## `Column`
 
 - 横方向にWidgetを並べる
 - `mainAxis`：縦方向
@@ -557,7 +620,7 @@
 - [`MainAxisSize`](#mainaxissize) `mainAxisSize`：
 - [`VerticalDirection`](#verticaldirection) `verticalDirection`：上下の順番制御
 
-## Stack
+## `Stack`
 
 - 子Widgetを重ねて表示する
 - 上下関係や重なり順を制御する
@@ -569,7 +632,7 @@
 - [`StackFit`](#stackfit) `fit`
 - [`Clip`](#clip) `clipBehivior`
 
-## Spacer
+## `Spacer`
 
 - `Row`/`Column`内で余白を自動調整する
 - `Flexible`と一緒に使うことが多い
@@ -578,21 +641,21 @@
 
 - `int` `flex`：`Row`/`Column`内の比率
 
-# ProxyWidget
+# `ProxyWidget`
 
-## InheritedWidget
+## `InheritedWidget`
 
 - アプリ全体でデータを共有
 
-## ParentDataWidget
+## `ParentDataWidget`
 
-# preferredSizeWidget
+# `PreferredSizeWidget`
 
-## AppBar(inplements)
+## `AppBar`(`inplements`)
 
 # その他のクラス
 
-## Navigator
+## `Navigator`
 
 - 画面遷移のエンジン
 - システムクラス
@@ -610,7 +673,7 @@
 - [`DidRemovePageCallback`](#didremovepagecallback) `onDidRemovePage`：ページがナビゲーターから`remove`された時に呼ばれる
 - [`RouteListFactory`](#routelistfactory) `onGenerateInitialRoutes`：
 
-## GestureDetector
+## `GestureDetector`
 
 - タップ・スワイプ・菜蒼紫など、ユーザーのジェスチャーを検知する
 - `StatelessWidget`
@@ -629,7 +692,7 @@
 
 - [`DragUpdateDetails`](#deagupdatedetails)
 
-## StreamBuilder
+## `StreamBuilder`
 
 - `Stream`（非同期イベントの流れ）を監視してWidgetを再描画
 - `StatefulWidget`
@@ -643,7 +706,7 @@
 
 # 非Widgetクラス
 
-## ImageProvider
+## `ImageProvider`
 
 画像を提供する
 
@@ -656,19 +719,19 @@
 - `FileImage(file)`：デバイス上のファイル
   - `file`：`File`オブジェクト
 
-## EdgeInsets
+## `EdgeInsets`
 
 - 4辺同じ余白：`EdgeInsets.all(value)`
 - 横・縦別指定：`EdgeInsets.symmetric(horizontal: x, vertical: y)`
 - 個別指定：`EdgeInsets.only(left: l, top; t, right: r, bottom: b)`
 
-## Color
+## `Color`
 
 - 公式色：`Colors.blue`
 - カスタム：`Color(0xFFRRGGBB)`（16進数）
 - 色の濃淡：`Colors.blue.shade200`
 
-## Alignment
+## `Alignment`
 
 - 中央：`Alignment.center`
 - 上左／上右：`Alignment.topLeft`/`Alignment.topRight`
@@ -682,14 +745,14 @@
   - `x`：横方向（-1.0~1.0）
   - `y`：縦方向（-1.0~1.0）
 
-## BoxFit
+## `BoxFit`
 
 - `BoxFit.cover`：親Widgetを埋めるように切り取り
 - `BoxFit.contain`：親Widget内に収まるように縮小
 - `BoxFit.fill`：親Widgetに引き延ばす
 - `BoxFit.fitWidth`/`BoxFit.fitHeight`：親Widhetの幅／高さに揃える
 
-## BoxDecoration
+## `BoxDecoration`
 
 背景色・角丸・影・グラデーションなどを指定できる
 
@@ -702,7 +765,7 @@
 - `List<BoxShadow>` `boxShadow`：影
 - [`Gradient`](#gradient) `gradient`：グラデーション
 
-## TextStyle
+## `TextStyle`
 
 #### プロパティ
 
@@ -718,7 +781,7 @@
 - [`Color`](#color) `backgroundColor`：文字の背景色
 - `String` `fontFamily`：フォントファミリー
 
-## TextEditingController
+## `TextEditingController`
 
 入力文字列の取得・変更・監視
 
@@ -733,14 +796,14 @@
 - `void removeListener(VoidCallback listener)`：監視を削除
 - `void clear()`：入力内容を空にする
 
-## TextSelection
+## `TextSelection`
 
 #### プロパティ
 
 - `int` `baseOffset`：選択範囲の開始位置（カーソル位置の左端）
 - `int` `extendOffset`：選択範囲の終了位置（カーソル位置の右端）
 
-## Duration
+## `Duration`
 
 指定した時間だけ、処理や表示が持続する
 
@@ -753,7 +816,7 @@
 - `int` `milliseconds`
 - `int` `microseconds`
 
-## BorderRadius
+## `BorderRadius`
 
 - 全角：`BorderRadius.circular(value)`
 - 全角：`BorderRadius.all(Radius.circular(value))`
@@ -767,7 +830,7 @@
 
 - [`Radius`](#radius)
 
-## Border
+## `Border`
 
 - 全辺：`Border.all(color: Colors.black)`
   - [`Color`](#color) `color`
@@ -780,7 +843,7 @@
 
 - [`BorderSide`](#borderside)
 
-## BorderSide
+## `BorderSide`
 
 #### プロパティ
 
@@ -788,7 +851,7 @@
 - `double` `width`
 - [`BorderStyle`](#borderstyle) `style`
 
-## BoxShadow
+## `BoxShadow`
 
 #### プロパティ
 
@@ -796,7 +859,7 @@
 - `double` `blueRadius`
 - [`Offset`](#offset) `offset(dx, dy)`
 
-## Gradient
+## `Gradient`
 
 線形・放射状グラデーションを指定
 
@@ -806,7 +869,7 @@
 - [`Alignment`](#alignment) `begin`
 - [`Alignment`](#alignment) `end`
 
-## ShapeBorder
+## `ShapeBorder`
 
 #### サブクラス
 
@@ -821,7 +884,7 @@
 
 # enum系
 
-## MainAxisAlignment
+## `MainAxisAlignment`
 
 主軸方向のWidgetの配置
 
@@ -834,7 +897,7 @@
 - `MainAxisAlignment.spaceAround`：均等配置（両端に半分の余白）
 - `MainAxisAlignment.spaceEvenly`：完全な均等配置
 
-## CrossAxisAlignment
+## `CrossAxisAlignment`
 
 交差軸方向のWidgetの配置
 
@@ -846,7 +909,7 @@
 - `CrossAxisAlignment.stretch`：最大幅／高さまで伸ばす
 - `CrossAxisAlignment.baseline`：テキストのベースラインに揃える（`Row`限定）
 
-## TextDirection
+## `TextDirection`
 
 テキストの横並びの方向
 
@@ -855,7 +918,7 @@
 - `TextDirection.ltr`：Left to Right（左から右）
 - `TextDirection.rtl`：Right to Left（右から左）
 
-## FlexFit
+## `FlexFit`
 
 サイズの埋め方
 
@@ -864,13 +927,13 @@
 - `FlexFit.tight`：できるだけ埋める
 - `FlexFit.loose`：子Widgetの最小サイズで留める
 
-## StackFit
+## `StackFit`
 
 - `StackFit.loose`：子Widgetのサイズを優先し、親Widgetのサイズは制約しない
 - `StackFit.expand`：子Widgetのサイズを親Widgetのサイズいっぱいに広げる
 - `StackFit.passthrough`：親Widgetのサイズ制御なしで、子Widgetのサイズそのままにする
 
-## Clip
+## `Clip`
 
 はみ出しのクリップ方法
 
@@ -881,12 +944,12 @@
 - `ClipantiAlias`：アンチエイリアス付きでカット（見た目重視）
 - `Clip.antiAliasWithSaveLayer`：保存レイヤー付きでカット（重いが高品質）
 
-## Axis
+## `Axis`
 
 - `Axis.vertical`：縦方向スクロール
 - `Axis.horizontal`：横方向スクロール
 
-## ScrollPhysics
+## `ScrollPhysics`
 
 #### サブクラス
 
@@ -894,7 +957,7 @@
 - `ClampingScrollPhysics()`：Android風のストップ
 - `NeverScrollableScrollPhysics()`：スクロール禁止
 
-## TextInputType
+## `TextInputType`
 
 入力タイプ
 
@@ -905,15 +968,79 @@
 - `TextInputType.emailAddress`：メール用キーボード
 - `TextInputType.phone`：電話番号入力
 
-## BlendMode
+## `BlendMode`
 
 - `BlendMode.multiply`：元の色*上塗りの色（暗くなることが多い）
 - `BlendMode.overlay`：乗算+スクリーン合成（コントラストが強くなる）
 
-## ImageRepeat
+## `ImageRepeat`
 
 - `ImageRepeat.repeat`
 - `ImageRepeat.noRepeat`
 
 # Generic系
 
+## `MaterialStateProperty<T>`
+
+- UIウィジェットの状態に応じて値を変えられるラッパーオブジェクト
+- [`MaterialState`](#materialstate)と一緒に使う
+
+```dart
+ButtonStyle(
+  backgroundColor: MaterialStateProperty.resolveWith((states) {
+    if (states.contains(MaterialState.pressed)) {
+      return Colors.red;   // 押されたとき
+    }
+    if (states.contains(MaterialState.hovered)) {
+      return Colors.blue;  // ホバー時
+    }
+    return Colors.green;   // 通常時
+  }),
+)
+```
+
+## `MaterialState`
+
+- `MaterialState.all`
+- `MaterialState.enabled`：通常
+- `MaterialState.hovered`：ホバー中
+- `MaterialState.pressed`：押されている
+- `MaterialState.disabled`：無効
+
+## `ValueListenable<T>`
+
+- 値の変化を監視できる
+- 主にサブクラス[`ValueNotifier<T>`](#valuenotifiert)が使われる
+
+## `ValueNotifier<T>`
+
+- 状態を持つ箱
+- その値が変わると通知を送ってUIを再描画する
+- [~valueListenableBuilder`](#valuelistenablebuildert)などからUIで使える
+
+<br>
+
+- `setState`を使わずにUIを更新できる
+- 小規模の状態管理に便利
+- `Provider`や`Riverpod`よりシンプルで軽量
+
+#### メソッド
+
+- `value`：現在の値にアクセス
+- `value = newValue;`：値を更新するとリスナーに通知される
+- `addListener`：リスナー追加
+- `removeListener`：リスナー削除
+
+## `AsyncSnapshot<T>`
+
+- `Stream`の現在状態を表す
+
+#### プロパティ
+
+- `T` `data`：`Stream`の現在状態を表す
+- `Object` `error`：エラー情報
+- [`ConnectionState`](#connectionstate)：接続状態
+  - `waiting`：待機中
+  - `active`：データ到着中
+  - `done`：完了
+- `WidthFactor`
