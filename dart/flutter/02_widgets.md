@@ -18,6 +18,8 @@
   - [`IconButton`](#iconbutton)
   - [`ListTile`](#listtile)
   - [`InkWell`](#inkwell)
+  - [`Image`](#image)
+  - [`LayoutBuilder`](#layoutbuilder)
 - [`StatefulWidget`](#statefulwidget)
   - [`Scaffold`](#scaffold)
   - [`AppBar`](#appbar)
@@ -34,7 +36,7 @@
   - [`SingleChildrenScrollView`](#singlechildrenscrollview)
   - [`StreamBuilder<T>`](#streambuildert)
   - [`ValueListenableBuilder<T>`](#valuelistenablebuildert)
-- [`SignleChildRenderObjectWidget`](#signlechildrenderobjectwidget)
+- [`SingleChildRenderObjectWidget`](#singlechildrenderobjectwidget)
   - [`Container`](#container)
   - [`Padding`](#padding)
   - [`Center`](#center)
@@ -54,6 +56,7 @@
   - [`ParentDataWidget`](#parentdatawidget)
 - [`PreferredSizeWidget`](#preferredsizewidget)
   - [`AppBar`(`inplements`)](#appbarinplements)
+  - [`PreferredSize`](#preferredsize)
 - [値クラス・装飾クラス](#値クラス装飾クラス)
   - [`Color`](#color)
   - [`Colors`](#colors)
@@ -73,13 +76,18 @@
   - [`BoxShadow`](#boxshadow)
   - [`Gradient`](#gradient)
   - [`ShapeBorder`](#shapeborder)
+  - [`ImageProvider<T>`](#imageprovidert)
+  - [`BlendMode`](#blendmode)
+  - [`ImageRepeat`](#imagerepeat)
+  - [`VerticalDecoration`](#verticaldecoration)
 - [テキスト関連](#テキスト関連)
   - [`TextStyle`](#textstyle)
   - [`FontWeight`](#fontweight)
   - [`FontStyle`](#fontstyle)
   - [`TextDecoration`](#textdecoration)
-  - [TextAlign](#textalign)
+  - [`TextAlign`](#textalign)
   - [`TextTheme`](#texttheme)
+  - [`InputDecoration`](#inputdecoration)
 - [入力・コントローラー系](#入力コントローラー系)
   - [`TextEditingController`](#texteditingcontroller)
   - [`TextSelection`](#textselection)
@@ -88,6 +96,7 @@
   - [`ValueListenable<T>`](#valuelistenablet)
   - [`ValueNotifier<T>`](#valuenotifiert)
   - [`AsyncSnapshot<T>`](#asyncsnapshott)
+  - [`State<T>`](#statet)
 - [レイアウト制御用enum](#レイアウト制御用enum)
   - [`MainAxisAlignment`](#mainaxisalignment)
   - [`CrossAxisAlignment`](#crossaxisalignment)
@@ -97,24 +106,39 @@
   - [`Axis`](#axis)
   - [`Clip`](#clip)
   - [`TextDirection`](#textdirection)
+  - [`Curves`](#curves)
 - [Material/Theme系](#materialtheme系)
   - [`Theme`](#theme)
   - [`ThemeData`](#themedata)
   - [`AppBarTheme`](#appbartheme)
   - [`CardTheme`](#cardtheme)
-  - [`Navigator`](#navigator)
-  - [`GestureDetector`](#gesturedetector)
-- [非Widgetクラス](#非widgetクラス)
-  - [`ImageProvider`](#imageprovider)
-  - [`BlendMode`](#blendmode)
-  - [`ImageRepeat`](#imagerepeat)
-- [Generic系](#generic系)
+  - [`VisualDencity`](#visualdencity)
+  - [`ButtonStyle`](#buttonstyle)
+  - [`ButtonStyleFrom`](#buttonstylefrom)
+  - [`styleFrom`](#stylefrom)
   - [`MaterialStateProperty<T>`](#materialstatepropertyt)
   - [`MaterialState`](#materialstate)
+  - [`MaterialApp`](#materialapp)
+  - [`NavigationDestination`](#navigationdestination)
+  - [`MediaQuery`](#mediaquery)
+  - [`ColorScheme`](#colorscheme)
+- [Navigator/ジェスチャー関連](#navigatorジェスチャー関連)
+  - [`Navigator`](#navigator)
+  - [`GestureDetector`](#gesturedetector)
+  - [`DragUpdateDetails`](#dragupdatedetails)
+- [Sliver/Delegate系](#sliverdelegate系)
+  - [`SliverGridDelegate`](#slivergriddelegate)
+    - [`SliverGridDelegateWithFixedCrossAxisCount`](#slivergriddelegatewithfixedcrossaxiscount)
+    - [`SliverGridDelegateWithMaxCrossAxisExtent`](#slivergriddelegatewithmaxcrossaxisextent)
+- [BottomNavigation系](#bottomnavigation系)
+  - [`BottomNavigationBarType`](#bottomnavigationbartype)
+  - [`BottomNavigationBarItem`](#bottomnavigationbaritem)
 
 </details>
 
 # `StatelessWidget`
+
+状態を持たないWidget
 
 #### 基本構文
 
@@ -153,7 +177,7 @@ class クラス名 extends StatelessWidget {
 - [`TextAlign`](#textalign) `textAlign`
 - [`TextOverflow`](#textoverflow) `overflow`
 - `int` `maxLines`：行数の最大値
-- `bool` `softWrap`：テキストがウィジェット幅を超えるときに自動で折り返すかどうか
+- `bool` `softWrap`：テキストがWidget幅を超えるときに自動で折り返すかどうか
   - `true`（デフォルト）：改行する
   - `false`：改行しない
 - `double` `textScaleFactor`：ユーザーが端末の設定で変更した文字の大きさを反映させる
@@ -232,7 +256,7 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 
 - `double` `radius`：半径
 - [`Color`](#color) `backgroundColor`：背景色
-- [`ImageProvider`](#imageprovider) `backgroundImage`：丸い画像を表示
+- [`ImageProvider<T>`](#imageprovidert) `backgroundImage`：丸い画像を表示
 - `Widget` `child`：画像がない場合の代替表示（文字、アイコンなど）
 
 ## `Tooltip`
@@ -275,6 +299,12 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - `void Function()` `onPressed`：押した時の処理
 - `Widget` `child`
 - [`ButtonStyle`](#buttonstyle) `style`：ボタンのデザイン
+- [`Color`](#color) `backgroundColor`：背景色
+- [`Color`](#color) `foregroundColor`：テキスト色
+- `double` `elevation`：影の高さ
+- [`RoundedRectangleBorder`](#roundedrectangleborder) `shape`：形状
+- [`EdgeInsets`](#edgeinsets) `padding`：内側余白
+- [`Size`](#size) `minimumSize`：最小サイズ
 
 ## `TextButton`
 
@@ -285,6 +315,11 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - `VoidCallback` `onPressed`：押した時の処理
 - `Widget` `child`
 - [`ButtonStyle`](#buttonstyle) `style`：ボタンのデザイン
+
+#### メソッド
+
+- `TextButton.styleFrom(...)`
+  - [`styleFrom`](#stylefrom)
 
 ## `IconButton`
 
@@ -299,12 +334,17 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - [`Color`](#color) `color`：アイコンの色
 - `double` `iconSize`：アイコンのサイズ
 
+#### メソッド
+
+- IconButton.styleFrom(...)
+  - [`styleFrom`](#stylefrom)
+
 ## `ListTile`
 
 - 一般的なリストアイテム用
   - 左側：アイコン
   - 中央：タイトル・サブタイトル
-  - 右側：操作用ウィジェット
+  - 右側：操作用Widget
 - `ListView`内でよく使う
 
 #### プロパティ
@@ -312,7 +352,7 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - `Widget` `leading`：左側の表示（アイコン、画像など）
 - `Widget` `title`：主タイトル
 - `Widget` `subtitle`：サブタイトル
-- `Widget` `trailing`：右側の表示（操作用ウィジェット）
+- `Widget` `trailing`：右側の表示（操作用Widget）
 - `VoidCallback` `onTap`：タップ時の処理
 - `VoidCallback` `onLongPress`：長押し時の処理
 
@@ -329,6 +369,60 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - [`BorderRadius`](#borderradius) `borderRadius`：波紋の角丸
 - [`Color`](#color) `splashColor`：波紋の色
 - [`Color`](#color) `highlightColor`：タップ時の強調色
+
+## `Image`
+
+- 画像を表示
+- ネットワーク画像、アセット画像、メモリやファイルからの画像に対応
+
+#### コンストラクタ
+
+- `Image.asset('assets/images/logo.png', ...)`：
+  - アセット画像（プロジェクト内）
+  - `public.yaml`で登録が必要
+- `Image.network('https://example.com/image.png', ...)`：ネットワーク画像
+- `Image.file(File('/path/to/image.png'))`：デバイスのファイル
+- `Image.memory(bytes)`：メモリ上のバイトデータ
+
+#### プロパティ
+
+- `double` `width`/`height`
+- [`BoxFit`](#boxfit) `fit`
+- [`AlignmentGeometry`](#alignmentgeometry) `alignment`
+- [`Color`](#color) `color`：画像に色を重ねる場合
+- [`BlendMode`](#blendmode) `colorBlendMode`
+- [`ImageRepeat`](#imagerepeat) `repeat`
+- `bool` `gaplessPlayback`：`true`でリロード時のちらつきを防ぐ
+
+## `LayoutBuilder`
+
+- 親Widgetの`constraints`（制約）を取得して、それに応じたWidgetを構築
+- 画面サイズや親Wigetのサイズに応じてレイアウトを切り替えるときに使う
+- `constraints`：親Widgetから渡される、サイズの上限・下限情報
+
+#### 基本構文
+
+```dart
+LayoutBuilder(
+  builder: (BuildContext context, BoxConstraints constraints) {
+    // constraints.maxWidth / maxHeight などを見てWidgetを返す
+    return Widget();
+  },
+)
+```
+
+#### プロパティ
+
+- `Widget Function(BuildContext, BoxConstraints)` `builder`：`constraints`を見てWidgetを作る
+  - [`BuildContext`](#buildcontext) `context`：Widgetツリーの現在位置
+  - [`BoxConstraints`](#boxconstraints) `constraints`：親Widgetから渡されたサイズ制約
+
+#### `constraints`のメソッド
+
+- `constraints.maxWidth`/`constraints.maxHeight`
+- `constraints.minWidth`/`constraints.minHeight`
+- `constraints.hasBoundedWidth`：幅が有限かどうか
+- `constraints.hasBoundedHeight`：高さが有限かどうか
 
 # `StatefulWidget`
 
@@ -546,7 +640,9 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - `Widget Function(BuildContext, T, Widget)` `builder`：値が変わった時に再描画するWidgetを返す関数
 - `Widget` `child`：再描画されない固定部分のWidget
 
-# `SignleChildRenderObjectWidget`
+# `SingleChildRenderObjectWidget`
+
+実際に画面の描画する低レベルなWidget
 
 ## `Container`
 
@@ -585,8 +681,8 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 #### プロパティ
 
 - `Widget` `child`
-- `double` `WidthFactor`：親Widgetの幅に対する拡大率
-- `double` `heightFactor`：親Widgetの高さに対する拡大率
+- `double` `WidthFactor`：子Widgetの幅*数値=親要素の幅
+- `double` `heightFactor`：子Widgetの高さ*数値=親要素の幅
 
 ## `Align`
 
@@ -596,7 +692,7 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 
 - [`AlignmentGeometry`] `alignment`：子Widgetの並べ方
 - `Widget` `child`
-- `double` `WidthFactor`：子Widgetに対する幅の比率
+- `double` `WidthFactor`：子Widgetの幅*数値=親要素の幅
 
 ## `SizedBox`
 
@@ -668,6 +764,8 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 
 # `MultiChildRenderObjectWidget`
 
+実際に画面の描画する低レベルなWidget
+
 ## `Row`
 
 - 横方向にWidgetを並べる
@@ -720,9 +818,11 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 
 # `ProxyWidget`
 
+他のWidgetをラップして機能を追加
+
 ## `InheritedWidget`
 
-- アプリ全体でデータを共有
+アプリ全体でデータを共有
 
 ## `ParentDataWidget`
 
@@ -730,13 +830,32 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 
 ## `AppBar`(`inplements`)
 
+## `PreferredSize`
+
+- 子Widgetに希望するサイズを教えるラッパーWidget
+- [`PreferredSizeWidget`](#preferredsizewidget)を期待する場所で指定する
+- このサイズに合わせて`AppBar`などのサイズを決めたいときに使う
+
+#### プロパティ
+
+- [`Size`](#size) `preferredSize`
+- `Widget` `child`
+
 # 値クラス・装飾クラス
 
 ## `Color`
 
-- 公式色：`Colors.blue`
-- カスタム：`Color(0xFFRRGGBB)`（16進数）
-- 色の濃淡：`Colors.blue.shade200`
+#### 値
+
+- `Colors.blue`：公式色
+  - [`Colors`](#colors)
+  - 色の濃淡：`Colors.blue.shade200`
+- `Color(0xFFRRGGBB)`：カスタム（16進数）
+
+#### メソッド
+
+- `Color.fromARGB(255, 100, 150, 200)`：ARGB値から 
+- `Color.fromRGBO(100, 150, 200, 0.8)`：RGBA値から
 
 ## `Colors`
 
@@ -836,11 +955,14 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 
 ## `BorderSide`
 
+線の設定（色、太さ、種類など）
+
 #### プロパティ
 
 - [`Color`](#color) `color`
 - `double` `width`
 - [`BorderStyle`](#borderstyle) `style`
+- `double` `strokeAlign`：線の位置調整
 
 ## `BorderStyle`
 
@@ -871,7 +993,7 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 
 #### プロパティ
 
-- [`ImageProvider`](#imageprovider) `image`
+- [`ImageProvider<T>`](#imageprovidert) `image`
 - [`BoxFit`](#boxfit) `fit`
 
 ## `BoxShadow`
@@ -900,13 +1022,49 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - `CircleBorder`：円形
 - `StadiumBorder`：両端が丸いカプセル型
 
+## `ImageProvider<T>`
+
+画像を提供する
+
+#### サブクラス
+
+- `AssetImage(name)`：アプリに含まれる画像
+  - `name`：画像のパス
+- `NetworkImage(url)`：ネットワーク上の画像
+  - `url`：画像のURL
+- `FileImage(file)`：デバイス上のファイル
+  - `file`：`File`オブジェクト
+
+## `BlendMode`
+
+#### 値
+
+- `BlendMode.multiply`：元の色*上塗りの色（暗くなることが多い）
+- `BlendMode.overlay`：乗算+スクリーン合成（コントラストが強くなる）
+
+## `ImageRepeat`
+
+#### 値
+
+- `ImageRepeat.repeat`
+- `ImageRepeat.noRepeat`
+
+## `VerticalDecoration`
+
+`Column`で縦の並びの順番を制御
+
+#### 値
+
+- `VerticalDecoration.down`：上から下
+- `VerticalDecoration.up`：下から上
+
 # テキスト関連
 
 ## `TextStyle`
 
 #### プロパティ
 
-- [`Color`](#color) `color`：文字色
+- [`Color`](#color) `color`：テキスト色
 - `double` `fontSize`：大きさ
 - [`FontWeight`](#fontweight) `fontWeight`：太さ
 - [`FontStyle`](#fontstyle) `fontStyle`：斜体
@@ -948,7 +1106,7 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - `TextDecoration.underline`：下線
 - `TextDecoration.lineThrough`：取消線
 
-## TextAlign
+## `TextAlign`
 
 #### 値
 
@@ -975,6 +1133,23 @@ https://api.flutter.dev/flutter/material/Icons-class.html
   - 本文に使う標準的な文字
 - Label系：`labelLarge`/`labelMedium`/`labelSmall`
   - ボタンや小さなラベル、キャプション用の文字
+
+## `InputDecoration`
+
+入力フィールドの見た目（ラベル、枠、ヒントなど）
+
+#### プロパティ
+
+- `String` `labelText`：フィールド上のラベル
+- `String` `hintText`：入力前のヒント
+- [`OutlinedInputBorder`](#outlinedinputborder) `border`：枠を追加
+- [`Icon`](#icon) `prefixIcon`：入力欄の左にアイコン
+- [`Icon`](#icon) `suffixIcon`：入力欄の右にアイコン
+
+#### メソッド
+
+- `InputDecoration.collapsed(...)`
+  - `String` `hintText`
 
 # 入力・コントローラー系
 
@@ -1051,7 +1226,7 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 
 ## `AsyncSnapshot<T>`
 
-- `Stream`の現在状態を表す
+`Stream`の現在状態を表す
 
 #### プロパティ
 
@@ -1061,7 +1236,57 @@ https://api.flutter.dev/flutter/material/Icons-class.html
   - `waiting`：待機中
   - `active`：データ到着中
   - `done`：完了
-- `WidthFactor`
+
+## `State<T>`
+
+- `StatefulWidget`の状態（データ）とUI更新のロジックを持つクラス
+- `T`：`StatefulWidget`を継承したクラス
+- Widget自体は不変で、状態の変化は`State`が担当
+
+#### 基本構文
+
+```dart
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
+
+  @override
+  _MyWidgetState createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  int counter = 0; // 状態を持つ
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Counter: $counter'),
+        ElevatedButton(
+          onPressed: () => setState(() => counter++),
+          child: Text('Increment'),
+        ),
+      ],
+    );
+  }
+}
+```
+
+- `counter`：状態
+- `build()`：Widgetを構築
+- `setState()`：状態を変更し、画面を再描画
+
+#### メソッド
+
+- `initState()`：`State`作成直後に一度だけ呼ばれる初期化処理
+- `build(BuildContext context)`：状態が変わるたびに呼ばれるWidgetの描画処理
+- `setState(VoidCallback fn)`：状態を変更して画面を再ビルド
+- `dispose()`：`State`が破棄されるときのクリーンアップ処理
+
+#### StatefulWidgetとの関係
+
+- `StatefulWidget`：外側の不変データ
+- `State`：可変データ（状態）と描画ロジック
+- `State`から`widget.プロパティ名`で`StatefulWidget`本体の値を参照できる
 
 # レイアウト制御用enum
 
@@ -1143,6 +1368,17 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - `TextDirection.ltr`：Left to Right（左から右）
 - `TextDirection.rtl`：Right to Left（右から左）
 
+## `Curves`
+
+アニメーション用のイージング曲線定義
+
+#### メソッド
+
+- `Curves.easeIn`：ゆっくり始まる
+- `Curves.easeOut`：ゆっくり終わる
+- `Curves.easeInOut`：ゆっくり始まってゆっくり終わる
+- `Curves.bounceOut`：バウンス効果
+
 # Material/Theme系
 
 ## `Theme`
@@ -1157,12 +1393,31 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 
 ## `ThemeData`
 
+- アプリのデザインをまとめて管理するためのクラス
+- 色、フォント、スタイルを一括管理できる
+
+#### プロパティ
+
+- [`MaterialColor`](#materialcolor) `primarySwatch`：メインカラー（色のトーン一式を指定）
+- [`ColorScheme`](#colorscheme) `colorScheme`：色の組み合わせを体系的に管理
+- [`Color`] `scaffoldBackgroundColor`：画面背景色
+- [`TextTheme`] `textTheme`：見出しや本文のテキストスタイル
+- [`AppBarTheme`] `appBarTheme`
+- [`ButtonThemeData`] `buttonTheme`
+- [`ElevatedButtonThemeData`] `elevatedButtonTheme`
+- [`TextButtonThemeData`] `textButtonTheme`
+
+#### メソッド
+
+- `ThemeData.light().copyWith`
+- `ThemeData.dark().copyWith`
+
 ## `AppBarTheme`
 
 #### プロパティ
 
 - [`Color`](#color) `backgroundColor`：背景色
-- [`Color`](#color) `foregroundColor`：文字色
+- [`Color`](#color) `foregroundColor`：テキスト色
 - `double` `elevation`：影の高さ
 - [`TextStyle`](#textstyle) `titleTextStyle`：スタイル
 - [`IconThemeData`](#iconthemedata) `iconTheme`：アイコン
@@ -1172,7 +1427,136 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 #### プロパティ
 
 - [`Color`](#color) color
-- double elevation
+- `double` `elevation`
+- [`ShapeBorder`](#shapeborder) `shape`
+- [`EdgeInsets`](#edgeinsets) `margin`
+
+## `VisualDencity`
+
+#### プロパティ
+
+- `double` `horizontal`
+- `double` `vertical`
+
+## `ButtonStyle`
+
+ボタンのデザイン（色、サイズなど）
+
+#### プロパティ
+
+- [`MaterialStateProperty<Color>`](#materialstatepropertyt) `foregroundColor`：テキストやアイコンの色
+- [`MaterialStateProperty<Color>`](#materialstatepropertyt) `backgroundColor`：ボタンの背景色
+- [`MaterialStateProperty<EdgeInsetsGeometry>`](#materialstatepropertyt) `padding`：内側余白
+- [`MaterialStateProperty<OutlinedBorder>`](#materialstatepropertyt) `shape`：ボタンの角丸や枠線
+
+## `ButtonStyleFrom`
+
+## `styleFrom`
+
+- 主にButton系で使われる、複雑な設定オブジェクトを簡単に作るためのヘルパーメソッド
+- 他に`AppBar`, `FloatingActionButton`, `Chip`など
+- 条件分岐など複雑な状態別スタイルの場合、`styleFrom`ではなく`style: ButtonStyle`を使う
+
+#### プロパティ
+
+- [`Color`](#color) `backgroundColor`：背景色
+- [`Color`](#color) `foregroundColor`：テキスト・アイコン色
+- [`Color`](#color) `disabledBackgroundColor`：無効時の背景色
+- [`Color`](#color) `disabledForegroundColor`：無効時のテキスト・アイコン色
+- `double` `elevation`：影の高さ
+- [`EdgeInsetsGeometry`](#edgeinsetsgeometry) `padding`：内側余白
+- [`Size`](#size) `minimumSize`/`maximumSize`：最小／最大サイズ
+- [`Size`](#size) `fixedSize`：固定サイズ
+- [`RoundedRectangleBorder`](#roundedrectangleborder) `shape`：形状
+- [`BorderSide`](#bordersize) `side`：枠線
+- [`TextStyle`](#bordersize) `textStyle`：テキストスタイル
+- [`Duration`](#duration) `animationDuration`：アニメーション時間
+
+## `MaterialStateProperty<T>`
+
+- UIWidgetの状態に応じて値を変えられるラッパーオブジェクト
+- [`MaterialState`](#materialstate)と一緒に使う
+
+```dart
+ButtonStyle(
+  backgroundColor: MaterialStateProperty.resolveWith((states) {
+    if (states.contains(MaterialState.pressed)) {
+      return Colors.red;   // 押されたとき
+    }
+    if (states.contains(MaterialState.hovered)) {
+      return Colors.blue;  // ホバー時
+    }
+    return Colors.green;   // 通常時
+  }),
+)
+```
+
+## `MaterialState`
+
+#### 値
+
+- `MaterialState.all`
+- `MaterialState.enabled`：通常
+- `MaterialState.hovered`：ホバー中
+- `MaterialState.pressed`：押されている
+- `MaterialState.disabled`：無効
+
+## `MaterialApp`
+
+マテリアルデザインベースのアプリの土台
+
+#### プロパティ
+
+- `Widget` `home`：最初に表示する画面
+- `String` `title`：アプリのタイトル
+- [`ThemeData`](#themedata) `theme`：アプリ全体のテーマ
+- [`ThemeData`](#themedata) `darkTheme`
+- [`ThemeMode`](#thememode) `themeMode`
+- [`Locale`](#locale) `locale`：ロケール設定
+
+## `NavigationDestination`
+
+- ボトムナビゲーションの1つの項目を表すクラス
+- 主に[`NavigationBar`](#navigationbar)の`destinations`プロパティにリストで渡す
+
+#### プロパティ
+
+- `Widget` `icon`：デフォルトのアイコン
+- `Widget` `selectedIcon`：選択されているときのアイコン
+- `String` `label`：項目のラベル
+- `String` `tooltip`：ホバー時のツールチップ
+
+## `MediaQuery`
+
+画面情報取得
+
+#### メソッド
+
+- `MediaQuery.of(context).size.width`：画面幅
+- `MediaQuery.of(context).size.height`：画面高さ
+- `MediaQuery.of(context).padding.top`：ステータスバー高さ
+- `MediaQuery.of(context).viewInsets.bottom`：キーボード高さ
+- `MediaQuery.sizeOf(context)`：サイズのみ取得
+
+## `ColorScheme`
+
+色の組み合わせを体系的に管理
+
+#### プロパティ
+
+- [`Brightness`](#brightness) `brightness`
+- [`Color`](#color) `primary`
+- [`Color`](#color) `onPrimary`
+- [`Color`](#color) `secondary`
+- [`Color`](#color) `onSecondary`
+- [`Color`](#color) `background`
+- [`Color`](#color) `onBackground`
+- [`Color`](#color) `surface`
+- [`Color`](#color) `onSurface`
+- [`Color`](#color) `error`
+- [`Color`](#color) `onError`
+
+# Navigator/ジェスチャー関連
 
 ## `Navigator`
 
@@ -1213,62 +1597,59 @@ https://api.flutter.dev/flutter/material/Icons-class.html
 - `VoidCallback` `onDoubleTap`：ダブルタップ時に呼ばれる関数
 - `VoidCallback` `onLongPress`：長押し時に呼ばれる関数
 - `void Function(DragUpdateDetails)` `onPanUpdate`：ドラッグ時に呼ばれる関数
+  - [`DragUpdateDetails`](#deagupdatedetails)
 - `Widget` `child`
 
-#### 参照
+## `DragUpdateDetails`
 
-- [`DragUpdateDetails`](#deagupdatedetails)
+`onPanUpdate`で渡される詳細情報オブジェクト
 
-# 非Widgetクラス
+#### プロパティ
 
-## `ImageProvider`
+- [`Offset`](#offset) `delta`：前回の位置からの移動量（x, y）
+- [`Offset`](#offset) `globalPosition`：画面全体の絶対座標
+- [`Offset`](#offset) `localPosition`：`GestureDetector`内での相対座標
 
-画像を提供する
+# Sliver/Delegate系
 
-#### サブクラス
+## `SliverGridDelegate`
 
-- `AssetImage(name)`：アプリに含まれる画像
-  - `name`：画像のパス
-- `NetworkImage(url)`：ネットワーク上の画像
-  - `url`：画像のURL
-- `FileImage(file)`：デバイス上のファイル
-  - `file`：`File`オブジェクト
+グリッドの列や比率を決める
 
-## `BlendMode`
+### `SliverGridDelegateWithFixedCrossAxisCount`
 
-- `BlendMode.multiply`：元の色*上塗りの色（暗くなることが多い）
-- `BlendMode.overlay`：乗算+スクリーン合成（コントラストが強くなる）
+#### プロパティ
 
-## `ImageRepeat`
+- `int` `crossAxisCount`
+- `double` `mainAxisSpacing`
+- `double` `crossAxisSpacing`
+- `double` `childAspectRatio`
 
-- `ImageRepeat.repeat`
-- `ImageRepeat.noRepeat`
+### `SliverGridDelegateWithMaxCrossAxisExtent`
 
-# Generic系
+#### プロパティ
 
-## `MaterialStateProperty<T>`
+- `double` `maxCrossAxisExtent`
+- `double` `mainAxisSpacing`
+- `double` `crossAxisSpacing`
+- `double` `childAspectRatio`
 
-- UIウィジェットの状態に応じて値を変えられるラッパーオブジェクト
-- [`MaterialState`](#materialstate)と一緒に使う
+# BottomNavigation系
 
-```dart
-ButtonStyle(
-  backgroundColor: MaterialStateProperty.resolveWith((states) {
-    if (states.contains(MaterialState.pressed)) {
-      return Colors.red;   // 押されたとき
-    }
-    if (states.contains(MaterialState.hovered)) {
-      return Colors.blue;  // ホバー時
-    }
-    return Colors.green;   // 通常時
-  }),
-)
-```
+[BottomNavigationBar](#bottomnavigationbar)
 
-## `MaterialState`
+## `BottomNavigationBarType`
 
-- `MaterialState.all`
-- `MaterialState.enabled`：通常
-- `MaterialState.hovered`：ホバー中
-- `MaterialState.pressed`：押されている
-- `MaterialState.disabled`：無効
+固定／シフト表示
+
+#### 値
+
+- `BottomNavigationBarType.fixed`：全タブを均等に表示
+- `BottomNavigationBarType.shifting`：選択中タブが強調され、他は小さくなる
+
+## `BottomNavigationBarItem`
+
+#### プロパティ
+
+- [`Icon`](#icon) `icon`：タブのアイコン
+- `String` `label`：タブのラベル

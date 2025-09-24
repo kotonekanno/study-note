@@ -4,7 +4,7 @@
 ### 目次
 
 - [`go_router`](#go_router)
-- [web\_socket\_channel](#web_socket_channel)
+- [`web_socket_channel`](#web_socket_channel)
 - [`provider`](#provider)
 - [`http`](#http)
 - [`mysql1`](#mysql1)
@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
 
 - [Navigator](02_widgets.md#navigator)
 
-## web_socket_channel
+## `web_socket_channel`
 
 - クライアントとサーバーが双方向でリアルタイムに通信できる
 - HTTPと異なり、常に接続を維持してデータの送受信ができる
