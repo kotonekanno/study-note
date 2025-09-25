@@ -471,7 +471,7 @@ LayoutBuilder(
 - `Widget` `title`：タイトル
 - `List<Widget>` `actions`：右側に配置（アイコンボタンなど）
 - `Widget` `leading`：左側に配置（戻るボタンなど）
-- `Color`(#color) `backgroundColor`：背景色
+- [`Color`](#color) `backgroundColor`：背景色
 - `double` `elevation`：影の高さ
 
 ## `SliverAppBar`
@@ -1113,7 +1113,7 @@ LayoutBuilder(
 - `TextAlign.center`：中央揃え
 - `TextAlign.left`：左揃え
 - `TextAlign.right`：右揃え
-- `TextAlign.justify`：両橋揃え
+- `TextAlign.justify`：両端揃え
 
 ## `TextTheme`
 
@@ -1400,12 +1400,12 @@ class _MyWidgetState extends State<MyWidget> {
 
 - [`MaterialColor`](#materialcolor) `primarySwatch`：メインカラー（色のトーン一式を指定）
 - [`ColorScheme`](#colorscheme) `colorScheme`：色の組み合わせを体系的に管理
-- [`Color`] `scaffoldBackgroundColor`：画面背景色
-- [`TextTheme`] `textTheme`：見出しや本文のテキストスタイル
-- [`AppBarTheme`] `appBarTheme`
-- [`ButtonThemeData`] `buttonTheme`
-- [`ElevatedButtonThemeData`] `elevatedButtonTheme`
-- [`TextButtonThemeData`] `textButtonTheme`
+- [`Color`](#color) `scaffoldBackgroundColor`：画面背景色
+- [`TextTheme`](#texttheme) `textTheme`：見出しや本文のテキストスタイル
+- [`AppBarTheme`](#appbartheme) `appBarTheme`
+- [`ButtonThemeData`](#buttonthemedata) `buttonTheme`
+- [`ElevatedButtonThemeData`](#elevatedbuttonthemedata) `elevatedButtonTheme`
+- [`TextButtonThemeData`](#textbuttonthemedata) `textButtonTheme`
 
 #### メソッド
 
