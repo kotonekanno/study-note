@@ -1,7 +1,7 @@
 <!-- omit in toc -->
 # Study Note
 
-Github Pagesで見る：https://kotonekanno.github.io/study-note/
+Github Pagesで見る：<a herf="https://kotonekanno.github.io/study-note/" target="_blank" rel="noopener noreferrer">https://kotonekanno.github.io/study-note/</a>
 
 ### 目次
 
@@ -30,7 +30,7 @@ Github Pagesで見る：https://kotonekanno.github.io/study-note/
 - [**SQL**](sql/)：データベースから情報を取得・操作するための言語
 - [**Dart関連技術**](dart/)
   - [**Dart**](dart/basics/)：Googleが開発したプログラミング言語
-  - [パッケージ](dart/packages)
+  - [**パッケージ**](dart/packages)
   - [**Flutter**](dart/flutter/)：Dartを使用した、iOS・Android・Web・デスクトップ向けのアプリを作れるUIフレームワーク
 - 他にJava、Python、C言語を学習済み
 

@@ -33,7 +33,7 @@
   - [`Radio<T>`](#radiot)
   - [`ListView`](#listview)
   - [`GridView`](#gridview)
-  - [`SingleChildrenScrollView`](#singlechildrenscrollview)
+  - [`SingleChildScrollView`](#singlechildscrollview)
   - [`StreamBuilder<T>`](#streambuildert)
   - [`ValueListenableBuilder<T>`](#valuelistenablebuildert)
 - [`SingleChildRenderObjectWidget`](#singlechildrenderobjectwidget)
@@ -133,6 +133,7 @@
 - [BottomNavigation系](#bottomnavigation系)
   - [`BottomNavigationBarType`](#bottomnavigationbartype)
   - [`BottomNavigationBarItem`](#bottomnavigationbaritem)
+  - [`RoundedRectangleBorder`](#roundedrectangleborder)
 
 </details>
 
@@ -195,9 +196,9 @@ class クラス名 extends StatelessWidget {
 - [`Color`](#color) `color`：アイコンの色
 - `String` `semanticLabel`：アクセシビリティ用の説明テキスト
 
-#### メソッド
+#### 値
 
-https://api.flutter.dev/flutter/material/Icons-class.html
+参照：<a herf="https://api.flutter.dev/flutter/material/Icons-class.html" target="_blank" rel="noopener noreferrer">https://api.flutter.dev/flutter/material/Icons-class.html</a>
 
 <br>
 
@@ -609,7 +610,7 @@ LayoutBuilder(
 - [`Axis`](#axis) `scrollDirection`：スクロールの方向
 - [`EdgeInsetsGeometry`](#edgeinsetsgeometry) `padding`：グリッド全体の内側余白
 
-## `SingleChildrenScrollView`
+## `SingleChildScrollView`
 
 - 子Widgetが親Widgetのサイズを超える場合にスクロールさせる
 
@@ -619,7 +620,7 @@ LayoutBuilder(
 - [`Axis`](#axis) `scrollDirection`：スクロールの方向
 - `bool` `reverse`：`true`で逆順にスクロール
 - [`EdgeInsets`](#edgeinsets) `padding`
-- [`ScrollPhysics`] `physics`：スクロールの動き方を制御
+- [`ScrollPhysics`](#scrollphysics) `physics`：スクロールの動き方を制御
 - [`Clip`](#clip) `clipBehavior`：はみ出し部分の処理
 
 ## `StreamBuilder<T>`
@@ -690,7 +691,7 @@ LayoutBuilder(
 
 #### プロパティ
 
-- [`AlignmentGeometry`] `alignment`：子Widgetの並べ方
+- [`AlignmentGeometry`](#alignmentgeometry) `alignment`：子Widgetの並べ方
 - `Widget` `child`
 - `double` `WidthFactor`：子Widgetの幅*数値=親要素の幅
 
@@ -1653,3 +1654,14 @@ ButtonStyle(
 
 - [`Icon`](#icon) `icon`：タブのアイコン
 - `String` `label`：タブのラベル
+
+
+
+## `RoundedRectangleBorder`
+
+ボタンやカードの角丸
+
+#### プロパティ
+
+- [`BorderSide`](#borderside) `side`：枠線の太さや色
+- [`BorderRadiusGeometry`](#borderradiusgeometry) `borderRadius`：角丸の半径

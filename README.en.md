@@ -1,7 +1,7 @@
 <!-- omit in toc -->
 # Study Note
 
-View this on Github Pages: https://kotonekanno.github.io/study-note/
+View this on Github Pages: <a herf="https://kotonekanno.github.io/study-note/" target="_blank" rel="noopener noreferrer">https://kotonekanno.github.io/study-note/</a>
 
 ### Table of Contents
 
