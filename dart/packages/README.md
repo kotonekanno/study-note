@@ -8,6 +8,7 @@
 - [`provider`](#provider)
 - [`http`](#http)
 - [`mysql1`](#mysql1)
+- [`hive`](#hive)
 - [`url_launcher`](#url_launcher)
 - [`url_launcher_web`](#url_launcher_web)
 - [`dio`](#dio)
@@ -264,6 +265,11 @@ void main() async {
 
 - `?`プレースホルダー：配列で値を渡す
 - パラメータのバインド
+
+## `hive`
+
+- 軽量で高速なNoSQLデータベース
+- [`Hive`](hive.md)
 
 ## `url_launcher`
 

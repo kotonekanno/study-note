@@ -55,7 +55,7 @@
   - [`InheritedWidget`](#inheritedwidget)
   - [`ParentDataWidget`](#parentdatawidget)
 - [`PreferredSizeWidget`](#preferredsizewidget)
-  - [`AppBar`(`inplements`)](#appbarinplements)
+  - [`AppBar`(inplements)](#appbarinplements)
   - [`PreferredSize`](#preferredsize)
 - [値クラス・装飾クラス](#値クラス装飾クラス)
   - [`Color`](#color)
@@ -133,7 +133,14 @@
 - [BottomNavigation系](#bottomnavigation系)
   - [`BottomNavigationBarType`](#bottomnavigationbartype)
   - [`BottomNavigationBarItem`](#bottomnavigationbaritem)
+- [未分類](#未分類)
   - [`RoundedRectangleBorder`](#roundedrectangleborder)
+  - [`Brightness`](#brightness)
+  - [`TextOverFlow`](#textoverflow)
+  - [`EdgeInsetsGeometry`](#edgeinsetsgeometry)
+  - [`EdgeInsetsDirectional`](#edgeinsetsdirectional)
+  - [`AlignmentGeometry`](#alignmentgeometry)
+  - [`BoxConstraints`](#boxconstraints)
 
 </details>
 
@@ -415,7 +422,7 @@ LayoutBuilder(
 #### プロパティ
 
 - `Widget Function(BuildContext, BoxConstraints)` `builder`：`constraints`を見てWidgetを作る
-  - [`BuildContext`](#buildcontext) `context`：Widgetツリーの現在位置
+  - `BuildContext` `context`：Widgetツリーの現在位置
   - [`BoxConstraints`](#boxconstraints) `constraints`：親Widgetから渡されたサイズ制約
 
 #### `constraints`のメソッド
@@ -829,7 +836,7 @@ LayoutBuilder(
 
 # `PreferredSizeWidget`
 
-## `AppBar`(`inplements`)
+## `AppBar`(inplements)
 
 ## `PreferredSize`
 
@@ -908,6 +915,7 @@ LayoutBuilder(
 - 4辺同じ余白：`EdgeInsets.all(value)`
 - 横・縦別指定：`EdgeInsets.symmetric(horizontal: x, vertical: y)`
 - 個別指定：`EdgeInsets.only(left: l, top; t, right: r, bottom: b)`
+- LTBE順に指定：`EdgeInsets.fromLTRB(left: l, top; t, right: r, bottom: b)`
 - 余白なし：`EdgeInsets.zero`
 
 ## `Alignment`
@@ -1655,7 +1663,7 @@ ButtonStyle(
 - [`Icon`](#icon) `icon`：タブのアイコン
 - `String` `label`：タブのラベル
 
-
+# 未分類
 
 ## `RoundedRectangleBorder`
 
@@ -1665,3 +1673,73 @@ ButtonStyle(
 
 - [`BorderSide`](#borderside) `side`：枠線の太さや色
 - [`BorderRadiusGeometry`](#borderradiusgeometry) `borderRadius`：角丸の半径
+
+## `Brightness`
+
+#### 値
+
+- `light`
+- `dark`
+
+## `TextOverFlow`
+
+- `Text`で文字列が指定された領域からはみ出すときの挙動を指定
+- `maxLines`と組み合わせて使う
+
+#### 値
+
+- `TextOverFlow.clip`：テキストを単純に切り捨てる
+- `TextOverFlow.fade`：
+  - 末尾がフェードアウトして徐々に透明になる
+  - `softWrap: false`と組み合わせると綺麗に動作する
+- `TextOverFlow.ellipsis`：末尾を「`…`」で省略表示（最もよく使われる）
+- `TextOverFlow.visible`：制約を無視してそのまま描画
+
+## `EdgeInsetsGeometry`
+
+- 余白（`padding`/`margin`）を表現するための抽象クラス
+- 通常はサブクラスを利用する
+
+#### サブクラス
+
+- [`EdgeInsets`](#edgeinsets)
+- [`EdgeInsetsDirectional`](#edgeinsetsdirectional)
+
+## `EdgeInsetsDirectional`
+
+言語の方向性（LTR/RTL）に応じて左右の意味が変わる
+- `start`：LTRなら左、RTLなら右
+- `end`：LTRなら右、RTLなら左
+
+#### 値
+
+- 方向依存：`EdgeInsetsDirectional.only({start, top, end, bottom})`
+- STEB順に指定：`EdgeInsetsDirectional.fromSTEB(start, top, end, bottom)`
+
+## `AlignmentGeometry`
+
+配置を表すための抽象クラス
+
+#### サブクラス
+
+- [`Alignment`](#alignment)
+- [`AlignmentDirectional`](#alignmentdirectional)
+
+## `BoxConstraints`
+
+#### プロパティ
+
+- `double` `minWidth`
+- `double` `maxWidth`
+- `double` `minHeight`
+- `double` `maxHeight`
+
+#### コンストラクタ
+
+- `BoxConstraints()`：全部指定できる
+- `BoxConstraints.tight(Size size)`：幅と高さを固定
+- `BoxConstraints.tightFor({double? width, double? height})`：幅または高さを固定
+- `BoxConstraints.tightForfinite({double? width, double? height})`：無限指定時にだけ制約を与える
+- `BoxConstraints.expand({double? width, double? height})`：親いっぱいに広げる
+- `BoxConstraints.loose(Size size)`：最大値だけ指定
+- `BoxConstraints.unconstrained()`：制約なし
