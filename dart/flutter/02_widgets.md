@@ -141,6 +141,7 @@
   - [`EdgeInsetsDirectional`](#edgeinsetsdirectional)
   - [`AlignmentGeometry`](#alignmentgeometry)
   - [`BoxConstraints`](#boxconstraints)
+  - [`showModalBottomSheet`](#showmodalbottomsheet)
 
 </details>
 
@@ -1743,3 +1744,36 @@ ButtonStyle(
 - `BoxConstraints.expand({double? width, double? height})`：親いっぱいに広げる
 - `BoxConstraints.loose(Size size)`：最大値だけ指定
 - `BoxConstraints.unconstrained()`：制約なし
+
+## `showModalBottomSheet`
+
+- 画面下からモーダル形式のシートを表示するための関数
+- 背景が半透明で操作不可（モーダル）
+- スワイプで閉じることも可能
+- ユーザーが閉じると`Future<T?>`（`Navigator.pop()`で返す値）が返る
+
+#### 基本構文
+
+```dart
+showModalBottomSheet(
+  context: context,
+  builder: (BuildContext context) {
+    return Container(
+      height: 200,
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          const Text('モーダルシート', style: TextStyle(fontSize: 18)),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, '閉じたよ'),
+            child: const Text('閉じる'),
+          ),
+        ],
+      ),
+    );
+  },
+);
+```
+
+- `builder`でシートの内容を返す
+- `Navigator.pop(context, result)`で閉じながら値を返せる
