@@ -8,6 +8,7 @@
 - [`provider`](#provider)
 - [`http`](#http)
 - [`mysql1`](#mysql1)
+- [`shared_preferences`](#shared_preferences)
 - [`hive`](#hive)
 - [`url_launcher`](#url_launcher)
 - [`url_launcher_web`](#url_launcher_web)
@@ -265,6 +266,94 @@ void main() async {
 
 - `?`プレースホルダー：配列で値を渡す
 - パラメータのバインド
+
+## `shared_preferences`
+
+- 永続的に保存できる軽量なキー・バリュー型ストレージ
+- ログイン状態や設定値など小さなデータを端末に保存
+- 保存先：OS依存のローカルストレージ
+- サイズ制限：数百KB程度（DB用途には向かない）
+
+#### 基本構文
+
+```dart
+import 'package:shared_preferences/shared_preferences.dart';
+```
+
+- データを保存（set）
+
+  ```dart
+  final prefs = await SharedPreferences.getInstance();
+
+  await prefs.setString('username', 'user123');
+  await prefs.setInt('age', 25);
+  await prefs.setBool('isLoggedIn', true);
+  ```
+
+- データを取得
+  ```dart
+  final prefs = await SharedPreferences.getInstance();
+
+  String? username = prefs.getString('username');
+  int? age = prefs.getInt('age');
+  bool? isLoggedIn = prefs.getBool('isLoggedIn');
+  ```
+  - 値が存在しない場合`null`になるため、`?`がついている
+
+- データを削除・全削除
+  ```dart
+  await prefs.remove('username'); // 特定のキーを削除
+  await prefs.clear(); // すべてのキーを削除
+  ```
+
+#### サンプルコード
+
+```dart
+class LoginViewModel {
+  Future<void> saveLoginState(bool isLoggedIn) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('isLoggedIn', isLoggedIn);
+  }
+
+  Future<bool> isUserLoggedIn() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('isLoggedIn') ?? false;
+  }
+
+  Future<void> logout() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove('isLoggedIn');
+  }
+}
+```
+
+#### 注意点
+
+- `SharedPreferences.getInstance()`は非同期なので、必ず`await`が必要
+- 型は厳密
+- 端末のストレージを削除（アンインストールなど）するとデータは消える
+- 保存可能なのはプリミティブ型のみ（オブジェクトやリストは型変換が必要）
+
+#### ListやMapの保存
+
+そのままでは保存できないので、JSON文字列化して保存する
+
+```dart
+import 'dart:convert';
+
+final prefs = await SharedPreferences.getInstance();
+List<String> items = ['apple', 'banana', 'cherry'];
+
+// 保存
+await prefs.setString('items', jsonEncode(items));
+
+// 取得
+String? data = prefs.getString('items');
+if (data != null) {
+  List<String> restored = List<String>.from(jsonDecode(data));
+  print(restored); // ['apple', 'banana', 'cherry']
+}
+```
 
 ## `hive`
 
