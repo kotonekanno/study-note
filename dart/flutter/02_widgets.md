@@ -46,6 +46,7 @@
   - [`Flexible`](#flexible)
   - [`Positioned`](#positioned)
   - [`Visibility`](#visibility)
+  - [`BoxConstraints`](#boxconstraints)
 - [`MultiChildRenderObjectWidget`](#multichildrenderobjectwidget)
   - [`Row`](#row)
   - [`Column`](#column)
@@ -60,11 +61,15 @@
 - [値クラス・装飾クラス](#値クラス装飾クラス)
   - [`Color`](#color)
   - [`Colors`](#colors)
+  - [`Brightness`](#brightness)
   - [`Size`](#size)
   - [`Offset`](#offset)
   - [`Duration`](#duration)
   - [`EdgeInsets`](#edgeinsets)
+  - [`EdgeInsetsGeometry`](#edgeinsetsgeometry)
+  - [`EdgeInsetsDirectional`](#edgeinsetsdirectional)
   - [`Alignment`](#alignment)
+  - [`AlignmentGeometry`](#alignmentgeometry)
   - [`BoxFit`](#boxfit)
   - [`BoxDecoration`](#boxdecoration)
   - [`Border`](#border)
@@ -72,6 +77,7 @@
   - [`BorderStyle`](#borderstyle)
   - [`BorderRadius`](#borderradius)
   - [`Radius`](#radius)
+  - [`RoundedRectangleBorder`](#roundedrectangleborder)
   - [`DecorationImage`](#decorationimage)
   - [`BoxShadow`](#boxshadow)
   - [`Gradient`](#gradient)
@@ -86,6 +92,7 @@
   - [`FontStyle`](#fontstyle)
   - [`TextDecoration`](#textdecoration)
   - [`TextAlign`](#textalign)
+  - [`TextOverflow`](#textoverflow)
   - [`TextTheme`](#texttheme)
   - [`InputDecoration`](#inputdecoration)
 - [入力・コントローラー系](#入力コントローラー系)
@@ -122,6 +129,7 @@
   - [`NavigationDestination`](#navigationdestination)
   - [`MediaQuery`](#mediaquery)
   - [`ColorScheme`](#colorscheme)
+  - [`showModalBottomSheet`](#showmodalbottomsheet)
 - [Navigator/ジェスチャー関連](#navigatorジェスチャー関連)
   - [`Navigator`](#navigator)
   - [`GestureDetector`](#gesturedetector)
@@ -133,15 +141,6 @@
 - [BottomNavigation系](#bottomnavigation系)
   - [`BottomNavigationBarType`](#bottomnavigationbartype)
   - [`BottomNavigationBarItem`](#bottomnavigationbaritem)
-- [未分類](#未分類)
-  - [`RoundedRectangleBorder`](#roundedrectangleborder)
-  - [`Brightness`](#brightness)
-  - [`TextOverFlow`](#textoverflow)
-  - [`EdgeInsetsGeometry`](#edgeinsetsgeometry)
-  - [`EdgeInsetsDirectional`](#edgeinsetsdirectional)
-  - [`AlignmentGeometry`](#alignmentgeometry)
-  - [`BoxConstraints`](#boxconstraints)
-  - [`showModalBottomSheet`](#showmodalbottomsheet)
 
 </details>
 
@@ -771,6 +770,15 @@ LayoutBuilder(
 - `bool` `maintainSemantics`：アクセシビリティ情報を保持するか
 - `bool` `maintainInteractivity`：タッチや操作を保持するか
 
+## `BoxConstraints`
+
+#### プロパティ
+
+- `double` `minWidth`
+- `double` `maxWidth`
+- `double` `minHeight`
+- `double` `maxHeight`
+
 # `MultiChildRenderObjectWidget`
 
 実際に画面の描画する低レベルなWidget
@@ -883,6 +891,13 @@ LayoutBuilder(
   - `t`：0.0〜1.0
   - 例：`Colors.lerp(Colors.red, Colors.blue, 0.5)`
 
+## `Brightness`
+
+#### 値
+
+- `light`
+- `dark`
+
 ## `Size`
 
 ## `Offset`
@@ -919,6 +934,27 @@ LayoutBuilder(
 - LTBE順に指定：`EdgeInsets.fromLTRB(left: l, top; t, right: r, bottom: b)`
 - 余白なし：`EdgeInsets.zero`
 
+## `EdgeInsetsGeometry`
+
+- 余白（`padding`/`margin`）を表現するための抽象クラス
+- 通常はサブクラスを利用する
+
+#### サブクラス
+
+- [`EdgeInsets`](#edgeinsets)
+- [`EdgeInsetsDirectional`](#edgeinsetsdirectional)
+
+## `EdgeInsetsDirectional`
+
+言語の方向性（LTR/RTL）に応じて左右の意味が変わる
+- `start`：LTRなら左、RTLなら右
+- `end`：LTRなら右、RTLなら左
+
+#### 値
+
+- 方向依存：`EdgeInsetsDirectional.only({start, top, end, bottom})`
+- STEB順に指定：`EdgeInsetsDirectional.fromSTEB(start, top, end, bottom)`
+
 ## `Alignment`
 
 - `Alignment.center`：中央
@@ -929,6 +965,25 @@ LayoutBuilder(
 - `Alignment(x, y)`：座標指定
   - `x`：横方向（-1.0~1.0）
   - `y`：縦方向（-1.0~1.0）
+
+## `AlignmentGeometry`
+
+配置を表すための抽象クラス
+
+#### サブクラス
+
+- [`Alignment`](#alignment)
+- [`AlignmentDirectional`](#alignmentdirectional)
+
+#### コンストラクタ
+
+- `BoxConstraints()`：全部指定できる
+- `BoxConstraints.tight(Size size)`：幅と高さを固定
+- `BoxConstraints.tightFor({double? width, double? height})`：幅または高さを固定
+- `BoxConstraints.tightForfinite({double? width, double? height})`：無限指定時にだけ制約を与える
+- `BoxConstraints.expand({double? width, double? height})`：親いっぱいに広げる
+- `BoxConstraints.loose(Size size)`：最大値だけ指定
+- `BoxConstraints.unconstrained()`：制約なし
 
 ## `BoxFit`
 
@@ -996,6 +1051,15 @@ LayoutBuilder(
 - [`Radius`](#radius)
 
 ## `Radius`
+
+## `RoundedRectangleBorder`
+
+ボタンやカードの角丸
+
+#### プロパティ
+
+- [`BorderSide`](#borderside) `side`：枠線の太さや色
+- [`BorderRadiusGeometry`](#borderradiusgeometry) `borderRadius`：角丸の半径
 
 ## `DecorationImage`
 
@@ -1124,6 +1188,20 @@ LayoutBuilder(
 - `TextAlign.left`：左揃え
 - `TextAlign.right`：右揃え
 - `TextAlign.justify`：両端揃え
+
+## `TextOverflow`
+
+- `Text`で文字列が指定された領域からはみ出すときの挙動を指定
+- `maxLines`と組み合わせて使う
+
+#### 値
+
+- `TextOverflow.clip`：テキストを単純に切り捨てる
+- `TextOverflow.fade`：
+  - 末尾がフェードアウトして徐々に透明になる
+  - `softWrap: false`と組み合わせると綺麗に動作する
+- `TextOverflow.ellipsis`：末尾を「`…`」で省略表示（最もよく使われる）
+- `TextOverflow.visible`：制約を無視してそのまま描画
 
 ## `TextTheme`
 
@@ -1566,6 +1644,39 @@ ButtonStyle(
 - [`Color`](#color) `error`
 - [`Color`](#color) `onError`
 
+## `showModalBottomSheet`
+
+- 画面下からモーダル形式のシートを表示するための関数
+- 背景が半透明で操作不可（モーダル）
+- スワイプで閉じることも可能
+- ユーザーが閉じると`Future<T?>`（`Navigator.pop()`で返す値）が返る
+
+#### 基本構文
+
+```dart
+showModalBottomSheet(
+  context: context,
+  builder: (BuildContext context) {
+    return Container(
+      height: 200,
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          const Text('モーダルシート', style: TextStyle(fontSize: 18)),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, '閉じたよ'),
+            child: const Text('閉じる'),
+          ),
+        ],
+      ),
+    );
+  },
+);
+```
+
+- `builder`でシートの内容を返す
+- `Navigator.pop(context, result)`で閉じながら値を返せる
+
 # Navigator/ジェスチャー関連
 
 ## `Navigator`
@@ -1663,117 +1774,3 @@ ButtonStyle(
 
 - [`Icon`](#icon) `icon`：タブのアイコン
 - `String` `label`：タブのラベル
-
-# 未分類
-
-## `RoundedRectangleBorder`
-
-ボタンやカードの角丸
-
-#### プロパティ
-
-- [`BorderSide`](#borderside) `side`：枠線の太さや色
-- [`BorderRadiusGeometry`](#borderradiusgeometry) `borderRadius`：角丸の半径
-
-## `Brightness`
-
-#### 値
-
-- `light`
-- `dark`
-
-## `TextOverFlow`
-
-- `Text`で文字列が指定された領域からはみ出すときの挙動を指定
-- `maxLines`と組み合わせて使う
-
-#### 値
-
-- `TextOverFlow.clip`：テキストを単純に切り捨てる
-- `TextOverFlow.fade`：
-  - 末尾がフェードアウトして徐々に透明になる
-  - `softWrap: false`と組み合わせると綺麗に動作する
-- `TextOverFlow.ellipsis`：末尾を「`…`」で省略表示（最もよく使われる）
-- `TextOverFlow.visible`：制約を無視してそのまま描画
-
-## `EdgeInsetsGeometry`
-
-- 余白（`padding`/`margin`）を表現するための抽象クラス
-- 通常はサブクラスを利用する
-
-#### サブクラス
-
-- [`EdgeInsets`](#edgeinsets)
-- [`EdgeInsetsDirectional`](#edgeinsetsdirectional)
-
-## `EdgeInsetsDirectional`
-
-言語の方向性（LTR/RTL）に応じて左右の意味が変わる
-- `start`：LTRなら左、RTLなら右
-- `end`：LTRなら右、RTLなら左
-
-#### 値
-
-- 方向依存：`EdgeInsetsDirectional.only({start, top, end, bottom})`
-- STEB順に指定：`EdgeInsetsDirectional.fromSTEB(start, top, end, bottom)`
-
-## `AlignmentGeometry`
-
-配置を表すための抽象クラス
-
-#### サブクラス
-
-- [`Alignment`](#alignment)
-- [`AlignmentDirectional`](#alignmentdirectional)
-
-## `BoxConstraints`
-
-#### プロパティ
-
-- `double` `minWidth`
-- `double` `maxWidth`
-- `double` `minHeight`
-- `double` `maxHeight`
-
-#### コンストラクタ
-
-- `BoxConstraints()`：全部指定できる
-- `BoxConstraints.tight(Size size)`：幅と高さを固定
-- `BoxConstraints.tightFor({double? width, double? height})`：幅または高さを固定
-- `BoxConstraints.tightForfinite({double? width, double? height})`：無限指定時にだけ制約を与える
-- `BoxConstraints.expand({double? width, double? height})`：親いっぱいに広げる
-- `BoxConstraints.loose(Size size)`：最大値だけ指定
-- `BoxConstraints.unconstrained()`：制約なし
-
-## `showModalBottomSheet`
-
-- 画面下からモーダル形式のシートを表示するための関数
-- 背景が半透明で操作不可（モーダル）
-- スワイプで閉じることも可能
-- ユーザーが閉じると`Future<T?>`（`Navigator.pop()`で返す値）が返る
-
-#### 基本構文
-
-```dart
-showModalBottomSheet(
-  context: context,
-  builder: (BuildContext context) {
-    return Container(
-      height: 200,
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        children: [
-          const Text('モーダルシート', style: TextStyle(fontSize: 18)),
-          ElevatedButton(
-            onPressed: () => Navigator.pop(context, '閉じたよ'),
-            child: const Text('閉じる'),
-          ),
-        ],
-      ),
-    );
-  },
-);
-```
-
-- `builder`でシートの内容を返す
-- `Navigator.pop(context, result)`で閉じながら値を返せる

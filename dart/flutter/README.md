@@ -72,7 +72,8 @@ Widget (抽象クラス)
 │   │   ├── Flexible
 │   │   ├── Positioned
 │   │   ├── Visibility
-│   │   └── FractionallySizedBox
+│   │   ├── FractionallySizedBox
+│   │   └── BoxConstraints
 │   └── MultiChildRenderObjectWidget
 │       ├── Row
 │       ├── Column
@@ -92,15 +93,20 @@ Widget (抽象クラス)
 
 ```
 Color / Colors
+Brightness
 Size / Offset / Duration
 EdgeInsets
+EdgeInsetsGeometry
+EdgeInsetsDirectional
 Alignment
+AlignmentGeometry
 BoxFit (enum)
 BoxDecoration
 Border
 │  ├── BorderSide
 │  └── BorderStyle (enum)
 BorderRadius / Radius
+RoundedRectangleBorder
 DecorationImage
 BoxShadow
 Gradient (abstract)
@@ -123,6 +129,7 @@ TextStyle
 │  ├── TextDecoration
 │  └── backgroundColor, height, etc.
 TextAlign (enum)
+TextOverflow (enum)
 TextTheme
 InputDecoration
 ```
@@ -170,6 +177,7 @@ MaterialApp
 NavigationDestination
 MediaQuery
 ColorScheme
+showModalBottomSheet
 ```
 
 ### Navigator/ジェスチャー関連
@@ -200,6 +208,7 @@ BottomNavigationBarItem
 
 - [Align](02_widgets.md#align)
 - [Alignment](02_widgets.md#alignment)
+- [AlignmentGeometry](02_widgets.md#alignmentgeometry)
 - [AppBar](02_widgets.md#appbar)
 - [AppBar(implements)](02_widgets.md#appbarinplements)
 - [AppBarTheme](02_widgets.md#appbartheme)
@@ -213,8 +222,10 @@ BottomNavigationBarItem
 - [BottomNavigationBar](02_widgets.md#bottomnavigationbar)
 - [BottomNavigationBarItem](02_widgets.md#bottomnavigationbaritem)
 - [BottomNavigationBarType](02_widgets.md#bottomnavigationbartype)
+- [BoxConstraints](02_widgets.md#boxconstraints)
 - [BoxDecoration](02_widgets.md#boxdecoration)
 - [BoxFit](02_widgets.md#boxfit)
+- [Brightness](02_widgets.md#brightness)
 - [BoxShadow](02_widgets.md#boxshadow)
 - [ButtonStyle](02_widgets.md#buttonstyle)
 - [ButtonStyleFrom](02_widgets.md#buttonstylefrom)
@@ -236,6 +247,8 @@ BottomNavigationBarItem
 - [DrauUpdateDetails](02_widgets.md#dragupdatedetails)
 - [Duration](02_widgets.md#duration)
 - [EdgeInsets](02_widgets.md#edgeinsets)
+- [EdgeInsetsDirectional](02_widgets.md#edgeinsetsdirectional)
+- [EdgeInsetsGeometry](02_widgets.md#edgeinsetsgeometry)
 - [ElevatedButton](02_widgets.md#elevatedbutton)
 - [Expanded](02_widgets.md#expanded)
 - [FlexFit](02_widgets.md#flexfit)
@@ -276,10 +289,12 @@ BottomNavigationBarItem
 - [ProxyWidget](02_widgets.md#proxywidget)
 - [Radio<T>](02_widgets.md#radiot)
 - [Radius](02_widgets.md#radius)
+- [RoundedRectangleBorder](02_widgets.md#roundedrectangleborder)
 - [Row](02_widgets.md#row)
 - [Scaffold](02_widgets.md#scaffold)
 - [ScrollPhysics](02_widgets.md#scrollphysics)
 - [ShapeBorder](02_widgets.md#shapeborder)
+- [showModalBottomSheet](02_widgets.md#showmodalbottomsheet)
 - [SingleChildrenScrollView](02_widgets.md#singlechildrenscrollview)
 - [Size](02_widgets.md#size)
 - [SizedBox](02_widgets.md#sizedbox)
@@ -303,6 +318,7 @@ BottomNavigationBarItem
 - [TextField](02_widgets.md#textfield)
 - [TextFormField](02_widgets.md#textformfield)
 - [TextInputType](02_widgets.md#textinputtype)
+- [TextOverflow](02_widgets.md#textoverflow)
 - [TextSelection](02_widgets.md#textselection)
 - [TextStyle](02_widgets.md#textstyle)
 - [TextTheme](02_widgets.md#texttheme)
