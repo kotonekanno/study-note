@@ -19,19 +19,19 @@ Github Pagesで見る：<a herf="https://kotonekanno.github.io/study-note/" targ
 ## 学習トピック
 
 - [**HTML/CSS**](frontend-basics/)：Webページの構造と見た目を作る基礎技術
-- [**JavaScript関連技術**](javascript/)
-  - [**JavaScript**](javascript/basics/)：ブラウザで動作する主要なプログラミング言語
-  - [**CoffeeScript**](javascript/coffeescript/)：JavaScriptを簡潔に書くための派生言語
-  - [**JQuery**](javascript/jquery/)：JavaScriptを便利に扱うためのライブラリ
-- [**Scala関連技術**](scala/)
-  - [**Scala**](scala/basics/)：JVM上で動作する静的型付けの汎用言語
-  - [**Play Framework**](scala/playframework/)：ScalaでWebアプリを簡単に作るためのフレームワーク
-  - [**Akka**](scala/akka/)：並行処理や非同期処理を簡単に扱うためのライブラリ
-- [**SQL**](sql/)：データベースから情報を取得・操作するための言語
-- [**Dart関連技術**](dart/)
-  - [**Dart**](dart/basics/)：Googleが開発したプログラミング言語
-  - [**パッケージ**](dart/packages)
-  - [**Flutter**](dart/flutter/)：Dartを使用した、iOS・Android・Web・デスクトップ向けのアプリを作れるUIフレームワーク
+- [**JavaScript関連技術**](lang-javascript/)
+  - [**JavaScript**](lang-javascript/basics/)：ブラウザで動作する主要なプログラミング言語
+  - [**CoffeeScript**](lang-javascript/coffeescript/)：JavaScriptを簡潔に書くための派生言語
+  - [**JQuery**](lang-javascript/jquery/)：JavaScriptを便利に扱うためのライブラリ
+- [**Scala関連技術**](lang-scala/)
+  - [**Scala**](lang-scala/basics/)：JVM上で動作する静的型付けの汎用言語
+  - [**Play Framework**](lang-scala/playframework/)：ScalaでWebアプリを簡単に作るためのフレームワーク
+  - [**Akka**](lang-scala/akka/)：並行処理や非同期処理を簡単に扱うためのライブラリ
+- [**SQL**](lang-sql/)：データベースから情報を取得・操作するための言語
+- [**Dart関連技術**](lang-dart/)
+  - [**Dart**](lang-dart/basics/)：Googleが開発したプログラミング言語
+  - [**パッケージ**](lang-dart/packages)
+  - [**Flutter**](lang-dart/flutter/)：Dartを使用した、iOS・Android・Web・デスクトップ向けのアプリを作れるUIフレームワーク
 - 他にJava、Python、C言語を学習済み
 
 
@@ -40,16 +40,16 @@ Github Pagesで見る：<a herf="https://kotonekanno.github.io/study-note/" targ
 ```
 study-note
 ├── frontend-basics/    # HTML/CSS
-├── javascript/
+├── lang-javascript/
 │   └── basics/         # JavaScript
 │   └── coffeescript/   # CoffeeScript
 │   └── jquery/         # JQuery
-├── scala/
+├── lang-scala/
 │   └── basics/         # Scala
 │   └── playframework/  # PlayFramework
 │   └── akka/           # Akka
-├── sql/                # SQL
-├── dart/
+├── lang-sql/                # SQL
+├── lang-dart/
 │   └── basics/         # Dart
 │   └── packages/       # パッケージ
 │   └── flutter/        # Flutter

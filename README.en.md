@@ -20,19 +20,19 @@ Published mainly for my own reference and record keeping.
 ## Contents
 
 - [**HTML/CSS**](frontend-basics/): Core technologies for building web page structure and appearance
-- [**JavaScript and related**](javascript/)
-  - [**JavaScript**](javascript/basics/): A primary programming language that runs in the browser
-  - [**CoffeeScript**](javascript/coffeescript/): A language derived from JavaScript for writing code more concisely
-  - [**JQuery**](javascript/jquery/): A library that simplifies working with JavaScript
-- [**Scala and related**](scala/)
-  - [**Scala**](scala/basics/): A statically-typed general-purpose language running on the JVM
-  - [**Play Framework**](scala/playframework/): A framework for easily buliding web applications in Scala
-  - [**Akka**](scala/akka/): A library for handling concurrency and asynchronous processing
-- [**SQL**](sql/): A language for querying and manipulating databases
-- [**Dart and related**](dart/)
-  - [**Dart**](dart/basics/): A language developed by google
-  - [Packages](dart/packages/)
-  - [**Flutter**](dart/flutter/): A UI framework written in Dart to build apps for iOS, Android, web, and desktop
+- [**JavaScript and related**](lang-javascript/)
+  - [**JavaScript**](lang-javascript/basics/): A primary programming language that runs in the browser
+  - [**CoffeeScript**](lang-javascript/coffeescript/): A language derived from JavaScript for writing code more concisely
+  - [**JQuery**](lang-javascript/jquery/): A library that simplifies working with JavaScript
+- [**Scala and related**](lang-scala/)
+  - [**Scala**](lang-scala/basics/): A statically-typed general-purpose language running on the JVM
+  - [**Play Framework**](lang-scala/playframework/): A framework for easily buliding web applications in Scala
+  - [**Akka**](lang-scala/akka/): A library for handling concurrency and asynchronous processing
+- [**SQL**](lang-sql/): A language for querying and manipulating databases
+- [**Dart and related**](lang-dart/)
+  - [**Dart**](lang-dart/basics/): A language developed by google
+  - [Packages](lang-dart/packages/)
+  - [**Flutter**](lang-dart/flutter/): A UI framework written in Dart to build apps for iOS, Android, web, and desktop
 - I have also studied Java, Python, and C
 
 
@@ -41,16 +41,16 @@ Published mainly for my own reference and record keeping.
 ```
 study-note
 ├── frontend-basics/    # HTML/CSS
-├── javascript/
+├── lang-javascript/
 │   └── basics/         # JavaScript
 │   └── coffeescript/   # CoffeeScript
 │   └── jquery/         # JQuery
-├── scala/
+├── lang-scala/
 │   └── basics/         # Scala
 │   └── playframework/  # PlayFramework
 │   └── akka/           # Akka
-├── sql/                # SQL
-├── dart/
+├── lang-sql/                # SQL
+├── lang-dart/
 │   └── basics/         # Dart
 │   └── packages/
 │   └── flutter/        # Flutter
