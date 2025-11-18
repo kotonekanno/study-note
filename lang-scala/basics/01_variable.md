@@ -98,7 +98,7 @@ println(s"Hello, $name!")  // → Hello, Alice!
 
 - `stripMargin`：複数行文字列の余白を整形
 - `split`：正規表現で分割
-- `reaokace`/`replaceAll`：文字列置換
+- `replace`/`replaceAll`：文字列置換
 - `toUpperCase`/`toLowerCase`：大文字／小文字変換
 - `format`：`printf`風の書式設定
 
