@@ -109,7 +109,7 @@ val product = numbers.fold(1)((a, b) => a * b)  // 24
 - `flatMap`：各要素に関数を適用して、結果のコレクションをフラット化
 - `filter`：条件に合う要素だけ取り出す
 - `foldLeft`/`foldRight`：左／右から畳み込み計算を行う
-- `reduceLefrt`/`reduvceRight`：畳み込み（初期値無し）
+- `reduceLeft`/`reduvceRight`：畳み込み（初期値無し）
 - `foreach`：各要素に副作用関数を実行
 - `groupBy`：条件ごとにグループ化
 - `zip`：2つのコレクションを要素ごとに組みにする
