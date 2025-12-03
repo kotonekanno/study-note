@@ -1,15 +1,9 @@
 <!-- omit in toc -->
-# Flutter
-
-### 目次
-
-- [リンク](#リンク)
-
-## リンク
+# Dart関連技術
 
 - [Dart](basics/)
+- [Flutter](flutter/)
+  - [Widget](flutter/)
 - [パッケージ](packages/)
   - [Provider](packages/provider.md)
   - [Hive](packages/hive.md)
-- [Flutter](flutter/)
-  - [Widget](flutter/)
