@@ -280,7 +280,7 @@ BottomNavigationBarItem
 - [Scaffold](02_widgets.md#scaffold)
 - [ScrollPhysics](02_widgets.md#scrollphysics)
 - [ShapeBorder](02_widgets.md#shapeborder)
-- [SingleChildrenScrollView](02_widgets.md#singlechildrenscrollview)
+- [SingleChildScrollView](02_widgets.md#singlechildscrollview)
 - [Size](02_widgets.md#size)
 - [SizedBox](02_widgets.md#sizedbox)
 - [SliverAppBar](02_widgets.md#sliverappbar)
