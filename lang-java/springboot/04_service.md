@@ -27,7 +27,7 @@ public class GreetingService {
 ```
 
 - `@Service`：
-  - このクラスがサービスそうであると伝えるアノテーション
+  - このクラスがサービス層であると伝えるアノテーション
   - このクラスは自動的にSpring管理下に置かれる（Bean登録）
 
 ## ControllerでServiceを使う

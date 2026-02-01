@@ -104,7 +104,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 - `findAll()`：全件取得
 - `findById(id)`：主キー検索
 - `deleteById(id)`：削除
-- `cuont()`：件数取得
+- `count()`：件数取得
 
 ## カスタムクエリ
 
