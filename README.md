@@ -28,17 +28,17 @@ Github Pagesで見る：<a herf="https://kotonekanno.github.io/study-note/" targ
   - [**CoffeeScript**](lang-javascript/coffeescript/)：JavaScriptを簡潔に書くための派生言語
   - [**JQuery**](lang-javascript/jquery/)：JavaScriptを便利に扱うためのライブラリ
 - [**Java関連技術**](lang-java/)
-  - [**Spring Boot**](lang-java/springboot/)：
+  - [**Java**](lang-java/basics/)：JVM上で動作する、汎用的で信頼性の高いオブジェクト指向プログラミング言語
+  - [**Spring Boot**](lang-java/springboot/)：JavaでWebアプリやAPIを素早く構築するためのフレームワーク
 - [**Scala関連技術**](lang-scala/)
   - [**Scala**](lang-scala/basics/)：JVM上で動作する静的型付けの汎用言語
   - [**Play Framework**](lang-scala/playframework/)：ScalaでWebアプリを簡単に作るためのフレームワーク
   - [**Akka**](lang-scala/akka/)：並行処理や非同期処理を簡単に扱うためのライブラリ
 - [**Dart関連技術**](lang-dart/)
   - [**Dart**](lang-dart/basics/)：Googleが開発したプログラミング言語
-  - [**パッケージ**](lang-dart/packages)
+  - [**パッケージ**](lang-dart/packages/)
   - [**Flutter**](lang-dart/flutter/)：Dartを使用した、iOS・Android・Web・デスクトップ向けのアプリを作れるUIフレームワーク
 - その他学習済み言語
-  - Java
   - Python
   - C言語
 
