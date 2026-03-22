@@ -48,8 +48,8 @@ Throwable
      └─ （その他）
 ```
 
-- `Throwable`：対外の最上位
-- `Error`：致命的（原則補足しない）
+- `Throwable`：例外の最上位
+- `Error`：致命的（原則捕捉しない）
 - `Exception`：アプリで扱う例外
   - `RuntimeException`：実行時例外
 
