@@ -29,6 +29,7 @@ Github Pagesで見る：<a herf="https://kotonekanno.github.io/study-note/" targ
   - [**JQuery**](lang-javascript/jquery/)：JavaScriptを便利に扱うためのライブラリ
 - [**Java関連技術**](lang-java/)
   - [**Java**](lang-java/basics/)：JVM上で動作する、汎用的で信頼性の高いオブジェクト指向プログラミング言語
+  - [**Java標準クラス**](lang-java/standard_classes/)
   - [**Spring Boot**](lang-java/springboot/)：JavaでWebアプリやAPIを素早く構築するためのフレームワーク
 - [**Scala関連技術**](lang-scala/)
   - [**Scala**](lang-scala/basics/)：JVM上で動作する静的型付けの汎用言語
@@ -45,8 +46,9 @@ Github Pagesで見る：<a herf="https://kotonekanno.github.io/study-note/" targ
 ### ツール・その他技術
 
 - [**SQL**](lang-sql/)：データベースから情報を取得・操作するための言語
-- [**GitBash**](tool-git/)：Gitをコマンドラインで操作するための言語
+- [**正規表現**](tool-regex/)：文字列のパターンを表す言語
 - [**Bash**](tool-bash/)：コマンドラインで操作するシェルスクリプト言語
+- [**GitBash**](tool-git/)：Gitをコマンドラインで操作するための言語
 
 ## ディレクトリ構成
 
