@@ -6,6 +6,7 @@
 
 - [基本構文](#基本構文)
 - [画面を返す場合](#画面を返す場合)
+- [典型シグネチャ集](#典型シグネチャ集)
 
 ## 基本構文
 
@@ -47,6 +48,32 @@ public class PageController {
 ```
 
 - `/home`にアクセスすると、Thymeleafがテンプレートを解釈してHTMLを返す
+
+## 典型シグネチャ集
+
+```java
+@GetMapping("/user")
+public String user(Model model)
+
+```
+
+```java
+@PostMapping("/user/register")
+public String register(
+  @Valid UserForm form,
+  BindingResult result,
+  Model model
+)
+
+```
+
+```java
+@PostMapping("/api/users")
+public ResponseEntity<User> create(
+  @RequestBody UserForm form
+)
+
+```
 
 <br>
 

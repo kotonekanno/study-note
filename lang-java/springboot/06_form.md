@@ -138,5 +138,9 @@ public class UserService {
 - `@NotNull`：`null`不可
 - `@Min` / `@Max`：数値の範囲制限
 - `@Size(min, max)`：文字列の長さ制限
-- `@Email`：メーリケ意識チェック
-- `@Pattern(regaxp="...")`：世紀パターン表現
+- `@Email`：メール形式チェック
+- `@Pattern(regaxp="...")`：正規パターン表現
+
+<br>
+
+→　次：[例外処理](07_exeption_handling.md)
