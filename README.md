@@ -7,9 +7,10 @@ Github Pagesで見る：<a herf="https://kotonekanno.github.io/study-note/" targ
 
 - [概要](#概要)
 - [学習トピック](#学習トピック)
-  - [プログラミング言語](#プログラミング言語)
-  - [ツール・その他技術](#ツールその他技術)
-- [ディレクトリ構成](#ディレクトリ構成)
+  - [プログラミング・アプリケーション開発](#プログラミングアプリケーション開発)
+  - [データベース](#データベース)
+  - [インフラ・開発環境](#インフラ開発環境)
+  - [その他技術・記法](#その他技術記法)
 
 
 ## 概要
@@ -20,7 +21,7 @@ Github Pagesで見る：<a herf="https://kotonekanno.github.io/study-note/" targ
 
 ## 学習トピック
 
-### プログラミング言語
+### プログラミング・アプリケーション開発
 
 - [**HTML/CSS**](frontend-basics/)：Webページの構造と見た目を作る基礎技術
 - [**JavaScript関連技術**](lang-javascript/)
@@ -41,32 +42,20 @@ Github Pagesで見る：<a herf="https://kotonekanno.github.io/study-note/" targ
   - [**Flutter**](lang-dart/flutter/)：Dartを使用した、iOS・Android・Web・デスクトップ向けのアプリを作れるUIフレームワーク
 - その他学習済み言語
   - Python
+  - TypeScript
   - C言語
+  - PHP
 
-### ツール・その他技術
+### データベース
 
 - [**SQL**](lang-sql/)：データベースから情報を取得・操作するための言語
-- [**正規表現**](tool-regex/)：文字列のパターンを表す言語
+
+### インフラ・開発環境
+
 - [**Bash**](tool-bash/)：コマンドラインで操作するシェルスクリプト言語
-- [**GitBash**](tool-git/)：Gitをコマンドラインで操作するための言語
+- [**Git**](tool-git/)：ソースコードの変更履歴を管理するためのバージョン管理システム
 
-## ディレクトリ構成
+### その他技術・記法
 
-```
-study-note
-├── frontend-basics/    # HTML/CSS
-├── lang-javascript/
-│   └── basics/         # JavaScript
-│   └── coffeescript/   # CoffeeScript
-│   └── jquery/         # JQuery
-├── lang-scala/
-│   └── basics/         # Scala
-│   └── playframework/  # PlayFramework
-│   └── akka/           # Akka
-├── lang-sql/                # SQL
-├── lang-dart/
-│   └── basics/         # Dart
-│   └── packages/       # パッケージ
-│   └── flutter/        # Flutter
-└── README.md
-```
+- [**正規表現**](tool-regex/)：文字列のパターンを表す言語
+- [**Mermaid記法**](tool-mermaid/)：テキストによって図形を自動で書くことができる仕組み
